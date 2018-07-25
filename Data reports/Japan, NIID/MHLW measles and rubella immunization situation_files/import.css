@@ -1,0 +1,33 @@
+@charset "shift_jis";
+
+/* Base
+========================================== */
+@import "base/reset.css";
+@import "base/structure.css";
+@import "base/textdecorations.css";
+@import "base/list.css";
+@import "base/icon.css";
+@import "base/divide.css";
+@import "base/localnavi.css";
+@import "base/megaDropdown.css";
+@import "base/print.css";
+
+
+/* Parts
+========================================== */
+@import "parts/headings.css";
+@import "parts/others.css";
+@import "parts/table.css";
+@import "parts/magazine.css";
+
+
+/* Individual
+========================================== */
+@import "individual/home.css";
+
+ 
+ 
+/* Past
+========================================== */
+@import "past/interviewDaijin.css";
+@import "past/pastLayout.css";

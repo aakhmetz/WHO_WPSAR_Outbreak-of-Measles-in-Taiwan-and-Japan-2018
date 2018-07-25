@@ -1,0 +1,152 @@
+;/* $.mk_cookie
+****************************************************************************
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	@varsion     : 1.0
+	@requires    : jquery.js
+	@last update : 2010.10.30 - oosugi
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	$.mk_cookie.create({
+		name: '名前',
+		value: '値',
+		days: '保存日数'
+	});
+	
+	$.mk_cookie.read('名前');
+	
+****************************************************************************/
+
+(function($){
+
+
+$(function(){
+	/*
+	// =====================================================
+	// ## Samples : defaults
+	// -----------------------------------------------------
+	
+	// cookieを生成する
+	$.mk_cookie.create(); // デフォルト（括弧の中にnameを指定しない）では「mk_cookie」の名前で生成される
+	
+	// cookieに入っている値を読み込む
+	var testRead1 = $.mk_cookie.read(); // デフォルトの「mk_cookie」という名前のcookieを読み込み変数に入れる。
+	
+	// test : クッキーをアラート
+	alert(testRead1); // デフォルトでは値は null なので nullとアラートされる。
+	
+	
+	// =====================================================
+	// ## Samples : Config
+	// -----------------------------------------------------
+	
+	// case1
+	// -----------------------------------------------------
+	// 値を入れてcookieを生成する
+	$.mk_cookie.create({
+		value: 'test2'
+	});
+	
+	// cookieに入っている値を読み込む
+	var testRead2 = $.mk_cookie.read(); // デフォルトの「mk_cookie」という名前のcookieを読み込み変数に入れる。
+	
+	// test : クッキーをアラート
+	alert(testRead2); // 「test2」とアラートされる
+	/*
+	/*
+	 * ここではクッキーの名前は設定していないので、初期値の「mk_cookie」のまま。
+	 * つまり、最初のサンプルのクッキーが null から test2 に上書きされた。
+	 * 以降、mk_cookie の名前でcookieを読み込むとtest2が入る。
+	*/
+	
+	/*
+	// case2
+	// -----------------------------------------------------
+	// cookieの名前を指定して読み込む
+	var testRead3 = $.mk_cookie.read('mk_cookie');
+	
+	// test : クッキーをアラート
+	alert(testRead3); // 「test2」とアラートされる
+	
+	
+	// case3
+	// -----------------------------------------------------
+	// 名前と値を指定してcookieを作成する
+	$.mk_cookie.create({
+		name: 'testCookie',
+		value: '1time'
+	});
+	
+	// test : 名前を指定してcookieを読み込みアラートする
+	alert($.mk_cookie.read('testCookie')); // 「1time」とアラートされる
+	
+	
+	// 上記で作成したtestCookieの値を上書きする
+	$.mk_cookie.create({
+		name: 'testCookie',
+		value: '2times'
+	});
+	
+	// test : 名前を指定してcookieを読み込みアラートする
+	alert($.mk_cookie.read('testCookie')); // 「2times」とアラートされる
+	
+	
+	// test用 : すべてのクッキーをアラートする
+	$.mk_cookie.alertAll();
+	*/
+	/*
+	 * なお、使用上は現れないが、cookieの名前の一意性を高めるため、
+	 * 接頭語として「hostname:」が付くようになっている。
+	*/
+	
+});
+
+
+$.mk_cookie = {
+	version: 1.0,
+	
+	create: function(config){
+		config = $.extend({
+			name: 'mk_cookie',
+			value: null,
+			days: 365
+		},config);
+		
+		var name = window.location.hostname + ':' + config.name;
+		
+		var expires = '';
+		if(config.days){
+			var date = new Date();
+			date.setTime(date.getTime()+(config.days*24*60*60*1000));
+			expires = "; expires="+date.toGMTString();
+		}
+		document.cookie = name+"="+config.value+expires+"; path=/";
+	},
+	
+	read: function(name){
+		(name)? name = ':' + name : name = ':mk_cookie';
+		name = window.location.hostname + name;
+		var nameEQ = name + '=';
+		var ca = document.cookie.split(';');
+		for(var i=0;i < ca.length;i++){
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		}
+		return null;
+	},
+	
+	alertAll: function(){
+		var ca = document.cookie.split('; ');
+		var m = '';
+		for(var i=0;i<ca.length;i++){
+			m += '['+i+'] '+ca[i]+"\n";
+		}
+		alert(m);
+	}
+};
+
+
+})(jQuery);

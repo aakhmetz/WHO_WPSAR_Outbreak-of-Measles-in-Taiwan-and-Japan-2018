@@ -1,0 +1,217 @@
+/*
+#------------------------------------------------------------------------
+# Memovie - April 2011 (for Joomla 1.6)
+#
+# Copyright (C) 2007-2011 Gavick.com. All Rights Reserved.
+# License: Copyrighted Commercial Software. It is based on GavickPro's GAVERN framework. 
+  NOTE: It is not free or public. This theme is for members of the GavickPro club only.
+# Website: http://www.gavick.com
+# Support: support@gavick.com 
+*/
+
+/* Basic elements */
+
+			/* 2013年5月14日修正, 2016年10月28日修正 */
+			body{line-height:1.7;background:url("../images/bg.jpg") no-repeat fixed center top #DDD!important;
+			word-break: normal;
+			}
+			
+/* body{color:#515151} */
+body{color:#333}
+body.fs1{font-size:10px}
+body.fs2{font-size:11px}
+body.fs3{font-size:12px}
+body.fs4{font-size:13px}
+body.fs5{font-size:14px}
+body.fs6{font-size:15px}
+body.fs7{font-size:16px}
+a{color:#496c94; text-decoration:none}
+a:hover,  a:active,  a:focus{color:#000; text-decoration:none}
+h1{font-size:180%}
+h2{font-size:150%}
+h3{font-size:125%}
+h4{font-size:110%}
+h5{font-size:100%}
+p {
+ margin: 0.5em 0;
+/* following three lines were added by kanou. 20131024 */
+ word-break: normal;
+ text-align:left;
+ text-justify: newspaper;
+}
+
+/* Containers */
+#gkSearch{float:right}
+#gkMenu { float: left;background:url("../images/style1/menu_bg.png") repeat-x scroll transparent;font-size:120%;line-height:1;position:relative;z-index:99;margin:0 4px;width:99.2%;}
+
+#gkPageTop { height: 95px; background:url("../images/main_header.jpg") repeat-x scroll bottom; margin:0 4px;}
+#gkPageTop div.header_left{height: 95px;background: url("../images/main_header_left.jpg") no-repeat;width: 391px;float:left;}
+#gkPageTop div.header_right{height: 95px;background: url("../images/main_header_right.jpg") no-repeat;float:right;width: 548px; margin-right:2px}
+#gkPageTop div.header_mid{height: 95px;background: url("../images/main_header_mid.jpg") repeat-x;float:left;width: auto}
+
+
+
+/* Logo */
+
+h1#gkLogo{margin:0; height:46px; width:210px; float:left;font-size:12px;}
+h1#gkLogo a{text-indent:-999em; display:block; height:46px; width:210px; background:transparent url('../images/logo.png') no-repeat}
+#gkLogo.text a {background:none repeat scroll 0 0 transparent !important;text-indent:0 !important;}
+.text a:hover{color:#ccc}
+.gkLogoText {color:#fff; font-size:24px; text-decoration:none; text-shadow:1px 1px 1px #222;margin-left:21px;float:left;display:block;}
+.gkLogoSlogan {color:#999; margin:-10px 0 0 21px;float:left;display:block;width:100%;font-weight:normal}
+
+/* Article breadcrumb */
+
+#gkBreadcrumb { background:url("../images/style1/menu_bg.png") repeat-x scroll bottom transparent;clear:both;height:34px; position: relative; line-height:34px;padding:0;border-left:4px solid #fff;border-right:4px solid #fff;border-bottom:4px solid #fff;}
+#gkButtonLogin, 
+#gkButtonTools, 
+div#gkBreadcrumb div#gkTools a {border-left:1px solid #C6C6C6;color:#7E7E7E;font-size:90%;font-weight:bold;height:15px;line-height:15px;margin:10px 8px 0 0;padding:0 0 0 8px;}
+#gkButtonLogin {border: none !important;}
+#gkBreadcrumb a { cursor: pointer }
+.breadcrumbs { float: left; width: 80%; font-size:100%;}
+#gkTools { float: right; width: auto; margin: 7px 5px auto auto; color: #FFF;font-weight: bold; height:24px; vertical-align:middle; }
+#gkButtonLogin, 
+#gkButtonTools { float: right; }
+
+#gkTools a#gkToolsReset{width:44px; height:24px;background:url(../images/font.png); display:inline-block;}
+#gkTools a#gkToolsInc {margin-left: 5px;width:56px; height:24px;background:url(../images/font-large.png); display: inline-block;}
+#gkTools a#gkToolsReset:hover{background:url(../images/font-off.png)}
+#gkTools a#gkToolsInc:hover{background:url(../images/font-large-off.png)}
+
+#gkHeader p {margin:0 0 -1px 0 !important;padding:0 !important}
+.box_menu:first-child,
+.box_text:first-child,
+.box.color1:first-child,
+.box.color2:first-child, 
+.box.color3:first-child, 
+.box.clear:first-child, #gkHeader .box{margin:0 !important;}
+div.bannergroup {margin-left:3px;}
+.nopadding .content{padding:0!important}
+.box.clear .content{background:none!important; border:none!important; padding:0!important}
+.box.clear span {background:none !important;text-shadow:none !important; color:#000 !important;padding:0!important}
+#gkWrap2 .box.color1 h3 {background-position:right 0 !important;border:medium none;}
+#gkWrap2 .box.color1 {background:url("../images/style1/module_titles.png") repeat-x scroll right 0 transparent;color:#FFF;position:relative;margin:0 0 4px 0 !important;}
+#gkWrap2 .box.color1 .content,
+#gkWrap2 .box.color2 .content {border:none;}
+#gkWrap2 .box.color1 a {color:#fff;}
+#gkWrap2 .box.color1 a:hover {color:#999;}
+#gkWrap2 .box.color1 ul li {border-bottom:1px solid #333333;}
+.box_menu,
+.box_text,
+#gkWrap2 .box,
+.box.color3 {
+background:url("../images/style1/module_titles.png") repeat-x scroll 0 -45px transparent;color:#666;position:relative;}
+#gkWrap2 .box.color3 a.readon {background:none; display:inline;font-size:100%;font-weight:normal;text-transform:none;color:#436284;}
+#gkWrap2 .box.color3 a.readon:hover,
+#gkContent .box.color3 a.readon:active,
+#gkContent .box.color3 a.readon:focus {text-transform:none !important;color:#000000 !important;text-shadow:none !important;}
+#gkWrap2 .box > h3 > span{color:#4A729F;text-shadow:1px 1px 1px #EEE;}
+#gkWrap2 .box.color1 .nspArt a {color:#fff;}
+#gkWrap2 .box.color1 .nspArt a:hover {color:#999;}
+#gkWrap2 .box.color1 .nspInfo {color:#5D5D5D;}
+#gkWrap2 .box.color1 > h3,
+#gkWrap2 .box.color1 > h3 > span {color:#FFF;text-shadow:1px 1px 1px #000;}
+#gkWrap2 .box.color1 h3 span {color:#6081A4;}
+#gkWrap2 .box>h3, 
+#gkMain .box_menu>h3, 
+#gkMain .box_text>h3, 
+#gkMain .box.color1>h3, 
+#gkMain .box.color2>h3, 
+#gkMain .box.color3>h3{height:44px; line-height:44px; border-bottom:1px solid #fff; background:transparent url('../images/style1/module_titles.png') repeat-x; background-position:0 -45px; text-shadow:1px 1px 1px #eee}
+#gkMain .box.color1 h3{height:45px; line-height:45px; border:none; background-position:0 0}
+#gkMain .box.color2 h3{height:45px; line-height:45px; border:none; background-position:0 -89px}
+#gkMain .box>h3>span, 
+#gkMain .box_menu>h3>span, 
+#gkMain .box_text>h3>span, 
+#gkMain .box.color1>h3>span, 
+#gkMain .box.color2>h3>span, 
+#gkMain .box.color3>h3>span{display:block; height:24px; line-height:24px; padding:0 16px; font-size:80%; font-weight:bold; color:#000; float:left; width:auto; margin:10px 0 0 0; text-transform:uppercase; background:transparent url('../images/style1/headings.png') no-repeat; background-position:right -24px}
+#gkMain .box.color1>h3>span{background-position:right 0; text-shadow:1px 1px 1px #000; color:#fff}
+#gkMain .box.color2>h3>span{background-position:right -48px; text-shadow:1px 1px 1px #000; color:#fff}
+#gkMain .box>h3 span.first-word, 
+#gkMain .box_menu>h3 span.first-word, 
+#gkMain .box_text>h3 span.first-word, 
+#gkMain .box.color3>h3 span.first-word{color:#4a729f}
+#gkMain .box.color1 h3 span.first-word{color:#6081a4}
+#gkMain .box.color2 h3 span.first-word{color:#fff}
+#gkMain .box .content, 
+#gkMain .box_menu .content, 
+#gkMain .box_text .content{background:#f1f1f1; padding:10px; color:#666}
+#gkMain .box.color1 .content{background:#131313; padding:10px; color:#888}
+#gkMain .box.color2 .content{background:#436284; padding:10px; color:#c1ddfc}
+#gkMain .box.color3 .content{background:#fff; padding:10px; color:#666}
+
+ul.latestnews_color2 {margin:10px 0;padding:0;}
+div.box.color2 ul li {border-bottom:1px solid #55779C;}
+.box.color2 a {color:#FFF;}
+.box.color2 a:hover{color:#c1ddfc}
+.nopadding .content {padding:0 !important;}
+div.nsp {position:relative;}
+.box.color1 .nspLinks ul li:hover {background:#333!important;}
+.box.color1 .nspLinks ul li.even {background:none repeat scroll 0 0 #222;}
+.box.color1 .nspLinks ul li.odd {background:none repeat scroll 0 0 #263546;}
+.box.color1 a.readon, .box.color2 a.readon {background-position:0 100%;color:#FFF;text-shadow:1px 1px 1px #111C28;}
+.box.color1 a.readon:hover {background-position:0 -21px;color:#fff !important;}
+.box.color1 div.nspLinks > ul li.even {background:none repeat scroll 0 0 #222 ;}
+.box.color1 a:hover {color:#999;}
+#gkWrap2 .box.color3 ul li {border-bottom:1px solid #EEE;}
+.demo-typo {margin:40px 0 30px 0;}
+/* Bottom  section */
+
+#gkBottom1 {background:url("../images/bottom1_bg.png") repeat-x scroll 0 top #D2D2D2;}
+#gkBottom2 {background:url("../images/bottom2_bg.png") repeat-x scroll 0 top #080909;color:#888;}
+#gkBottom1 .box,
+#gkBottom1 .box a{}
+#gkBottom2 .box a { color: #fff }
+#gkBottom1 .box a:hover,
+#gkBottom2 .box a:hover { color:#496C94;}
+#gkBottom1 .box {float:left;overflow:hidden}
+#gkBottom1 .box h3,
+#gkBottom2 .box h3 {color:#666;font-size:115%;font-weight:bold;height:42px;line-height:42px;text-shadow:1px 1px 3px #FFF;text-transform:uppercase;}
+#gkBottom2 .box h3 {color:#FFF;text-shadow:1px 1px 3px #000;}
+#gkBottom1 .gkColLeft > .box h3,
+#gkBottom1 .gkColLeft > .box > .content,
+#gkBottom2 .gkColLeft > .box h3,
+#gkBottom2 .gkColLeft > .box > .content {margin:0 0 0 18px}
+#gkBottom1 .gkColRight >.box > .content, #gkBottom2 .gkColRight >.box > .content {padding-right:18px;}
+#gkBottom1 .box > div.content,
+#gkBottom2 .box > div.content {padding:10px 0;}
+#gkBottom2 .content > ul {margin:10px 0;padding:0}
+#gkBottom1 > ul li,
+#gkBottom2 .content > ul li {background:url("../images/arrow.png") no-repeat scroll 0 9px transparent;padding-left:16px;line-height:220%;overflow:hidden;}
+#gkBottom2 .newsflash p {padding:5px;}
+
+/* Footer */
+
+#gkFooter {background:url("../images/footer_bg.png") repeat-x scroll transparent;height:45px;line-height:45px;padding:0 16px;color:#9F9F9F;font-size:80% !important;overflow:hidden;margin:0 4px 0 4px;border-bottom:4px solid #fff;}
+#gkFooterNav { float: left; }
+#gkFooter a { color: #CCC; }
+#gkFooter a:hover { color:#fff; }
+#gkCopyrights { float: right; margin-top: 0; font-size:110%; color:#CCC}
+#gkStyleArea  {float:right;font-size:90% !important;margin:0 0 0 40px;width:auto;}
+#gkFooterNav ul li, 
+#gkStyleArea a {background:url("../images/footer_bullet.png") no-repeat scroll 7px center transparent;float:left;padding-left:25px;text-shadow:1px 1px 2px #000;text-transform:uppercase;width:auto;}
+#gkFooterNav ul li:first-child, 
+#gkStyleArea a:first-child {background:none repeat scroll transparent !important;padding-left:0;}
+#gkFrameworkLogo { display: block; width: 130px; height: 42px; margin: 23px auto 46px; background: url('../images/framework-logo.png') no-repeat 0 0; text-indent: -9999em; }
+#gkHeader .banneritem {margin:0!important;padding:0 !important}
+
+/* Module styles */
+
+/* restrictions */
+
+/* suffixes*/
+
+div.box.color3.nopadding  {padding-top:0 !important;}
+div.box.color3.nopadding .content {border:none !important;background:#fff !important;} 
+/* clear */
+.clear { border: none !important; padding: 0 !important; background: none !important; }
+.clear > h3 {background:none !important;position:inherit !important}
+/* text */
+div.box_text .bannerfooter {text-align:right;margin:5px 0 0 0;}
+div.box_text .banneritem {border-bottom:1px solid #E5E5E5;padding:10px 0 10px 0;}
+
+div.lang > ul.lang-inline{float: right; padding-right: 20px}
+div.mod-languages ul li a{font-size: 120%;color: #666;font-weight:bold;}
+
+#toolRight{width: 230px;height: 95px;float:right;}

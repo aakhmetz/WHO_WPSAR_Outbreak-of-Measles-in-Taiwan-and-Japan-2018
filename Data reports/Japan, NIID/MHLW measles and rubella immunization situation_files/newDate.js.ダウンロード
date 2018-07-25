@@ -1,0 +1,69 @@
+var dispTime = 15 * 24 * 60;
+rUrl = new Array (
+		'10080',
+		'infocreate',
+		'cms'
+		);
+var url = location.href;
+var uFlag = 0;
+for (i=0; i < rUrl.length; i++) {
+	if (url.indexOf(rUrl[i]) != -1) {
+		uFlag = 1;
+		break;
+	}
+}
+var n = new Date();
+function dateCH(y, m, d, h, t){
+	if ((h == undefined) || (isNaN(h))) var h = 0;
+	if ((t == undefined) || (isNaN(t))) var t = 0;
+	if(isNaN(d)){
+//		document.write('<span class="newupdata">'+m+'月'+d+'日</span>');
+	}else{
+		var p = new Date(y, m-1, d, h, t, 0);
+		var c = Math.floor((n.getTime()-p.getTime())/(1000*60));
+		if (uFlag == 1) {
+			if(c < dispTime) document.write('<span class="newupdata">'+m+'月'+d+'日</span>');
+		} else {
+			if(c >= 0 && c < dispTime) document.write('<span class="newupdata">'+m+'月'+d+'日</span>');
+		}
+	}
+}
+function none_dateCH(y, m, d, h, t){
+	if ((h == undefined) || (isNaN(h))) var h = 0;
+	if ((t == undefined) || (isNaN(t))) var t = 0;
+	var p = new Date(y, m-1, d, h, t, 0);
+	var c = Math.floor((n.getTime()-p.getTime())/(1000*60));
+	if (uFlag == 1) {
+		if(c < dispTime) document.write('<span class="newupdata">&nbsp;</span>');
+	} else {
+		if(c >= 0 && c < dispTime) document.write('<span class="newupdata">&nbsp;</span>');
+	}
+}
+function e_dateCH(y, m, d, h, t){
+	var m_str = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+	if ((h == undefined) || (isNaN(h))) var h = 0;
+	if ((t == undefined) || (isNaN(t))) var t = 0;
+	if(isNaN(d)){
+//		document.write('<span style="white-space:nowrap;" class="newupdata">'+m_str[m-1]+' '+d+', '+y+'</span>');
+	}else{
+		var p = new Date(y, m-1, d, h, t, 0);
+		var c = Math.floor((n.getTime()-p.getTime())/(1000*60));
+		if (uFlag == 1) {
+			if(c < dispTime) document.write('<span style="white-space:nowrap;" class="newupdata">'+m_str[m-1]+' '+d+', '+y+'</span>');
+		} else {
+			if(c >= 0 && c < dispTime) document.write('<span style="white-space:nowrap;" class="newupdata">'+m_str[m-1]+' '+d+', '+y+'</span>');
+		}
+	}
+}
+function none_e_dateCH(y, m, d, h, t){
+	var m_str = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+	if ((h == undefined) || (isNaN(h))) var h = 0;
+	if ((t == undefined) || (isNaN(t))) var t = 0;
+	var p = new Date(y, m-1, d, h, t, 0);
+	var c = Math.floor((n.getTime()-p.getTime())/(1000*60));
+	if (uFlag == 1) {
+		if(c < dispTime) document.write('<span style="white-space:nowrap;" class="newupdata">&nbsp;</span>');
+	} else {
+		if(c >= 0 && c < dispTime) document.write('<span style="white-space:nowrap;" class="newupdata">&nbsp;</span>');
+	}
+}

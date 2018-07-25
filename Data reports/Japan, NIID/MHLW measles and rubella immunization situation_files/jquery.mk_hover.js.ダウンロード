@@ -1,0 +1,31 @@
+;/* 
+****************************************************************************
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	@require     : jquery.js
+	@last update : 2011.01.14 - oosugi
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	a要素以外にオーバー効果をつけるとき用
+	
+****************************************************************************/
+
+(function($){
+
+$(function(){
+	$('#header p#searchArea span.submit input, #contents div.prt-searchArea p.searchArea span.submit input')
+		.hover(
+			function(){
+				$(this).addClass('hover');
+			},function(){
+				$(this).removeClass('hover');
+			}
+		)
+		.click(function(){
+			$(this).removeClass('hover');
+		});
+});
+
+})(jQuery);

@@ -1,0 +1,32 @@
+;/* $.fn.mk_randomUnit
+****************************************************************************
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	@varsion     : 1.0.0
+	@require     : jquery.js
+	@last update : 2011.03.07 - oosugi
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+****************************************************************************/
+
+(function($){
+
+document.write('<style>#localnavi div.photoReport .report { display: none }</style>');
+$(function(){
+	$('#localnavi .photoReport').mk_randomUnit('.report');
+});
+
+$.fn.mk_randomUnit = function(unit){
+	this.each(function(){
+		var $container = $(this);
+		var $unit = $container.find(unit);
+		var unitNum = $unit.size();
+		var random = Math.floor(Math.random()*unitNum);
+		$unit.filter(':eq('+random+')').show();
+	});
+	return this;
+};
+
+})(jQuery);

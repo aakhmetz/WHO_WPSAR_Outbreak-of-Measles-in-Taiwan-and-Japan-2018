@@ -1,0 +1,113 @@
+/*!
+ * my.util.js
+ * サイト用ユーティリティ関数用ファイル
+ * @requires my.settings.js, jquery.js
+ */
+
+var MHLWSP = MHLWSP || {};
+var MHLW = MHLW || MHLWSP || {};
+
+MHLW.util = {};
+
+(function (MY, UTIL, $, window, undefined) {
+
+/**
+ * loadThemaData
+ *
+ * メガドロップダウンメニューやSP版ドロップダウンメニュー、
+ * SP版トップページなどで使用する分野メニューのJSONデータを読み込む。
+ *
+ * @requires MHLW.settings.root
+ * @returns {Object}
+ *
+ * Usage:
+ * UTIL.loadThemaData.success({Function});
+ * JSON読み込み成功時に引数に指定した関数を実行する
+ *
+ * UTIL.loadThemaData.error({Function});
+ * JSON読み込み失敗時に引数に指定した関数を実行する
+ */
+UTIL.loadThemaData = (function () {
+	/**
+	 * SELF
+	 */
+	var SELF = {
+		/**
+		 * _ajaxState
+		 * Ajaxで取得するJSONデータの準備状態
+		 * @returns {String} 'success' || 'error'
+		 */
+		_ajaxState: null,
+
+		/**
+		 * json
+		 * Ajaxで受け取ったJSONデータ
+		 */
+		json: null,
+
+		/**
+		 * success
+		 * Ajax通信成功時に引数で受け取った関数を実行する
+		 * 実行時にはJSONデータが引数として渡される
+		 * @param {Function} callback
+		 */
+		success: function (callback) {
+			if (typeof callback === 'function') {
+				if (SELF._ajaxState === 'success') {
+					callback(SELF.json);
+				}
+				else if (SELF._ajaxState === 'error') {
+					return;
+				}
+				else {
+					setTimeout(function () {
+						SELF.success(callback);
+					}, 100);
+				}
+			}
+		},
+
+		/**
+		 * error
+		 * Ajax通信失敗時に引数で受け取った関数を実行する
+		 * @param {Function} callback
+		 */
+		error: function (callback) {
+			if (typeof callback === 'function') {
+				if (SELF._ajaxState === 'error') {
+					callback();
+				}
+				else if (SELF._ajaxState === 'success') {
+					return;
+				}
+				else {
+					setTimeout(function () {
+						SELF.error(callback);
+					}, 100);
+				}
+			}
+		}
+	};
+
+
+	/**
+	 * ajax
+	 */
+	$.ajax({
+		url: MY.settings.root + '/common/data/thema.json',
+		dataType: 'json',
+		success: function (json) {
+			SELF._ajaxState = 'success';
+			SELF.json = json;
+		},
+		error: function () {
+			SELF._ajaxState = 'error';
+		}
+	});
+
+	return SELF;
+})();
+
+
+})(MHLW, MHLW.util, jQuery, this);
+

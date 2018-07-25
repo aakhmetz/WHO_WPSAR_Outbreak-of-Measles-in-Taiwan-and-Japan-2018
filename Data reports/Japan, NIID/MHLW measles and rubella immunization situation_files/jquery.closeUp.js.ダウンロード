@@ -1,0 +1,88 @@
+;/* $.fn.closeUp
+****************************************************************************
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	@varsion     : 1.0.0
+	@require     : jquery.js
+	@last update : 2011.02.18 - oosugi
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+****************************************************************************/
+
+(function($){
+
+document.write('<style>#localnavi div.closeUp li { display: none }</style>');
+
+
+$.closeUpMain = function(maxDisplayNum){
+	if(!maxDisplayNum) maxDisplayNum = 1;
+	
+	var $container = $('#localnavi .closeUp');
+	var $mainBanner = $container.find('.mainBanner ul li');
+	var $mainBannerFixed = $mainBanner.filter('.fixed');
+	
+	var $mainBannerRandom = $mainBanner.not($mainBannerFixed);
+	var bannersNum = $mainBanner.size();
+	
+	var fixedBannersNum = $mainBannerFixed.size();
+	var randomBannersNum = bannersNum - fixedBannersNum;
+	
+	var randomBannerDisplayNum = maxDisplayNum - fixedBannersNum;
+	
+	var $restBanner = $mainBannerRandom;
+	
+	
+	$mainBannerFixed.show();
+	
+	for(var i=0;i<randomBannerDisplayNum;i++){
+		var randomBannerNum = Math.floor(Math.random()*randomBannersNum);
+		
+		$restBanner.filter(':eq('+randomBannerNum+')').show();
+		
+		
+		$restBanner = $restBanner.not(':eq('+randomBannerNum+')');
+		var restBannerNum = $restBanner.size();
+		randomBannersNum = restBannerNum;
+		
+	}
+	
+};
+
+$.closeUp = function(maxDisplayNum){
+	if(!maxDisplayNum) maxDisplayNum = 3;
+	
+	var $container = $('#localnavi .closeUp');
+	var $subBanner = $container.find('.subBanner ul li');
+	var $subBannerFixed = $subBanner.filter('.fixed');
+	
+	var $subBannerRandom = $subBanner.not($subBannerFixed);
+	var bannersNum = $subBanner.size();
+	
+	var fixedBannersNum = $subBannerFixed.size();
+	var randomBannersNum = bannersNum - fixedBannersNum;
+	
+	var randomBannerDisplayNum = maxDisplayNum - fixedBannersNum;
+	
+	var $restBanner = $subBannerRandom;
+	
+	
+	$subBannerFixed.show();
+	
+	for(var i=0;i<randomBannerDisplayNum;i++){
+		var randomBannerNum = Math.floor(Math.random()*randomBannersNum);
+		
+		$restBanner.filter(':eq('+randomBannerNum+')').show();
+		
+		$restBanner = $restBanner.not(':eq('+randomBannerNum+')');
+		var restBannerNum = $restBanner.size();
+		randomBannersNum = restBannerNum;
+		
+	};
+	
+};
+
+
+
+})(jQuery);

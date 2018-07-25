@@ -1,0 +1,57 @@
+;/* $.mk_smoothScroll
+****************************************************************************
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	@varsion     : 1.2.1
+	@require     : jquery.js, jquery.regex.js
+	@last update : 2010.11.11 - oosugi
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	$(SELECTOR).mk_smoothScroll();
+	
+	SELECTOR以下のハッシュを含むリンクに対して、
+	同一ページ内に飛び先のアンカーが含まれる場合のみスムーススクロール。
+	
+****************************************************************************/
+
+(function($){
+
+$(function(){
+	$('#main,#pageTop').mk_smoothScroll();
+});
+
+
+$.fn.mk_smoothScroll = function(config){
+	config = $.extend({},$.mk_smoothScroll.defaults,config);
+	
+	this.find('a:regex(href,.*?#):not(a[href=#]):not(a[target])').bind('click.mk_smoothScroll', function(){
+		var href = $(this).attr('href');
+		var hash= this.hash;
+		var page = href.substr(0,href.indexOf('#'));
+		
+		// リンク先が同一ページ内でなければ飛ばす
+		if(window.location.pathname != page && !href.match(/^#/) && !href.match(/#document$/)) return;
+		
+		// リンク先が同一ページ内だったらアンカーリンクがあるページでだけ実行
+		var $target = $(hash == '#_top' ? 'body' : hash);
+		if($target.size()){
+			var top = $target.offset().top;
+			$($.browser.safari ? 'body' : 'html').animate({scrollTop:top}, config.speed, 'swing');
+		}
+		return false;
+	});
+	return this;
+};
+
+
+$.mk_smoothScroll = {
+	version: '1.2.1',
+	defaults: {
+		speed: 500
+	}
+};
+
+
+})(jQuery);

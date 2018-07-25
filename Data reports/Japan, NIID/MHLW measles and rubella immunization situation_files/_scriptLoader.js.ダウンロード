@@ -1,0 +1,60 @@
+;/* _mk_scriptLoader
+****************************************************************************
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	varsion     : 1.1
+	last update : 2010.11.01 - oosugi
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	JavaScriptファイルを読み込むためのプラグイン。
+	loaderName に設定したファイル（通常はローダー自身）と同階層以下のファイル群を読み込む。
+	loadFiles にカンマ区切りで読み込みたいファイル名を記入する。
+	
+****************************************************************************/
+(function(){
+
+var config = {
+
+//## Config
+//==========================================================================
+	loaderName: '_scriptLoader.js',
+	loadFiles: [
+		'jquery.js',
+		'jquery.regex.js',
+		'my.settings.js',
+		'my.util.js',
+		'jquery.mk_location.js',
+		'jquery.mk_smoothScroll.js',
+		'jquery.mk_cookie.js',
+		'jquery.mk_changeFontSize.js',
+		'jquery.mk_inputFucus.js',
+		'jquery.mk_hover.js',
+		'jquery.mk_megaDropdown.js',
+		'jquery.closeUp.js',
+		'jquery.mk_randomUnit.js',
+		'jquery.mk_styleAdjust_icon.js',
+		'flatHeights.paddingbugfix-ver.js',
+		'DD_belatedPNG.js',
+		'newDate.js'
+	]
+//==========================================================================
+
+}
+
+var scripts = document.getElementsByTagName('script');
+for(var i=0; i<scripts.length; i++){
+	if(scripts[i].src.match(config.loaderName)){
+		var scriptSrc = scripts[i].src;
+		var scriptDir = scriptSrc.substring(0,scriptSrc.lastIndexOf('/'+config.loaderName)+1);
+		
+		var loadScript = '';
+		for(var ii=0; ii<config.loadFiles.length; ii++){
+			loadScript += '<script src="'+scriptDir+config.loadFiles[ii]+'" charset="utf-8"></script>'+"\n";
+		}
+		document.write(loadScript);
+	}
+}
+
+})();

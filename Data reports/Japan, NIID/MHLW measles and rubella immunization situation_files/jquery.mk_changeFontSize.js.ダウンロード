@@ -1,0 +1,160 @@
+;/* $.mk.changeFontSize
+****************************************************************************
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	@varsion     : 1.0
+	@requier     : jquery.js, jquery.mk_cookie.js
+	@last update : 2011.01.14 - oosugi
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	
+	
+****************************************************************************/
+
+(function($){
+
+$(function(){
+	$('#changeFontSize').mk_changeFontSize({
+		size1: '100%',
+		size2: '128.6%',
+		size3: '142.9%',
+		hover: false,
+		className1: 'normal',
+		className2: 'large',
+		className3: 'extraLarge'
+	});
+});
+
+$.fn.mk_changeFontSize = function(config){
+	config = $.extend({},$.mk_changeFontSize.defaults,config);
+	
+	
+	var $targetArea = $(config.area);
+	
+	var $container = this;
+	var $buttons = $container.find('.' + config.className1 + ', .' + config.className2 + ', .' + config.className3);
+	var $small = $buttons.filter('.' + config.className1);
+	var $medium = $buttons.filter('.' + config.className2);
+	var $large = $buttons.filter('.' + config.className3);
+	
+	
+	//var $smallImg = $small.find('img');
+	//var smallImgSrc = $smallImg.attr('src');
+	//var smallDot = smallImgSrc.lastIndexOf('.');
+	//var smallImgSrcOn = smallImgSrc.substr(0,smallDot)+'_on'+smallImgSrc.substr(smallDot);
+	//var $smallImgOn = $('<img/>',{ 'src': smallImgSrcOn });
+	
+	//var $mediumImg = $medium.find('img');
+	//var mediumImgSrc = $mediumImg.attr('src');
+	//var mediumDot = mediumImgSrc.lastIndexOf('.');
+	//var mediumImgSrcOn = mediumImgSrc.substr(0,mediumDot)+'_on'+mediumImgSrc.substr(mediumDot);
+	//var $mediumImgOn = $('<img/>',{ 'src': mediumImgSrcOn });
+	
+	//var $largeImg = $large.find('img');
+	//var largeImgSrc = $largeImg.attr('src');
+	//var largeDot = largeImgSrc.lastIndexOf('.');
+	//var largeImgSrcOn = largeImgSrc.substr(0,largeDot)+'_on'+largeImgSrc.substr(largeDot);
+	//var $largeImgOn = $('<img/>',{ 'src': largeImgSrcOn });
+	
+	// begging
+	var cookie = $.mk_cookie.read('mk_changeFontSize');
+	$buttons.find('a').removeClass('active');
+	if(cookie==config.size2){
+		var fontSize = config.size2;
+		$medium.find('a').addClass('active');
+		//$smallImg.attr('src',smallImgSrcOn);
+	}
+	else if(cookie==config.size3){
+		var fontSize = config.size3;
+		$large.find('a').addClass('active');
+		//$largeImg.attr('src',largeImgSrcOn);
+	}
+	else{
+		var fontSize = config.size1;
+		$small.find('a').addClass('active');
+		//$mediumImg.attr('src',mediumImgSrcOn);
+	}
+	$targetArea.css({ fontSize: fontSize });
+	
+	
+	// switch function
+	var _switch = function(fontSize){
+		if(config.animate){
+			$targetArea.stop(true,false).animate({ fontSize: fontSize },config.speed);
+		}else{
+			$targetArea.css({ fontSize: fontSize },config.speed);
+		}
+		$buttons.find('a').removeClass('active');
+		$.mk_cookie.create({
+			name: 'mk_changeFontSize',
+			value: fontSize
+		});
+		
+		//$smallImg.attr('src',smallImgSrc);
+		//$mediumImg.attr('src',mediumImgSrc);
+		//$largeImg.attr('src',largeImgSrc);
+	};
+	
+	// bind
+	$small.bind('mk_chageFontSize',function(){
+		_switch(config.size1);
+		$small.find('a').addClass('active');
+		//$smallImg.attr('src',smallImgSrcOn);
+	});
+	$medium.bind('mk_chageFontSize',function(){
+		_switch(config.size2);
+		$medium.find('a').addClass('active');
+		//$mediumImg.attr('src',mediumImgSrcOn);
+	});
+	$large.bind('mk_chageFontSize',function(){
+		_switch(config.size3);
+		$large.find('a').addClass('active');
+		//$largeImg.attr('src',largeImgSrcOn);
+	});
+	
+	// action
+	$buttons.find('a')
+		.click(function(e){
+			e.preventDefault();
+			$(this).trigger('mk_chageFontSize');
+			$(this).css({ opacity: 1 });
+		});
+	
+	// hover
+	if(config.hover){
+		$buttons
+			.css({
+				cursor: 'pointer'
+			})
+			.mouseenter(function(){
+				$(this).stop(true,false).animate({ opacity: 0.7 }, 200);
+			})
+			.mouseleave(function(){
+				$(this).stop(true,false).animate({ opacity: 1 }, 100);
+			});
+	}
+	
+	return this;
+};
+
+
+$.mk_changeFontSize = {
+	version: 1.0,
+	defaults: {
+		size1: '100%',
+		size2: '116.7%',
+		size3: '133.4%',
+		area: '#main',
+		hover: true,
+		animate: true,
+		speed: 200,
+		className1: 'small',
+		className2: 'medium',
+		className3: 'large'
+	}
+};
+
+
+})(jQuery);

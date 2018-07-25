@@ -1,0 +1,251 @@
+/*!
+ * jquery.mk_megaDropdown.js
+ *
+ * @requires jquery.js, my,setting.js, my.util.js
+ * @modified 2012-02-06 oosugi@skillpartners.co.jp
+ * @modified 2015-03-20 IFC
+ */
+
+(function(MY, $, window, undefined){
+
+var megaDropdownHTML = '<div class="homeDropdown"><ul class="megaDropdown-contents">\
+<!-- =================================== -->\
+<li class="search2">\
+<dfn>政策分野別に探す</dfn>\
+<div class="contents">\
+<div class="row row-first">\
+<div class="col col1"></div>\
+<div class="col col2"></div>\
+<div class="col col3"></div>\
+<!-- /.row --></div>\
+<div class="row">\
+<div class="col col4"></div>\
+<div class="col col5"></div>\
+<div class="col col6"></div>\
+<!-- /.row --></div>\
+<!-- /.contents --></div>\
+</li>\
+<!-- =================================== -->\
+<li class="search3">\
+<dfn>キーワードで探す</dfn>\
+<div class="contents">\
+<ul>\
+</ul>\
+<!-- /.contents --></div>\
+</li>\
+<!-- =================================== -->\
+<!-- /.megaDropdown-contents --></ul></div>';
+
+var bunyaHTML = [];
+var keywordHTML = '';
+
+MY.util.loadThemaData.success(function (json) {
+	var ROOT = MY.settings.root;
+
+	/**
+	 * bunya
+	 */
+	(function (data) {
+		var i, l, ii, ll;
+		var html;
+		
+		for (i = 0, l = data.length; i < l; i += 1) {
+			html = '';
+			html += '<dfn><a href="' + ROOT + data[i].url + '">' + data[i].name + '</a></dfn>';
+			html += '<ul>';
+
+			for (ii = 0, ll = data[i].sub.length; ii < ll; ii += 1) {
+				html += '<li><a href="' + ROOT + data[i].sub[ii].url + '">' + data[i].sub[ii].name + '</a></li>';
+			}
+
+			html += '</ul>';
+			bunyaHTML[i] = html;
+		}
+	})(json.bunya);
+
+	/**
+	 * keyword
+	 */
+	(function (data) {
+		var i, l;
+
+		for (i = 0, l = data.length; i < l; i += 1) {
+			if (data[i].blank) {
+				keywordHTML += '<li><a href="' + data[i].url + '" target="_blank">' + data[i].name + '</a><img alt="別ウィンドウで開く" src="/common/images/base/ico_blank.png" class="mk_styleAdjust_iconImg"></li>';
+			}
+			else {
+				keywordHTML += '<li><a href="' + ROOT + data[i].url + '">' + data[i].name + '</a></li>';
+			}
+		}
+	})(json.keyword);
+
+	$(function(){
+
+		$.mk_overlay({
+			opacity: '0.2'
+		});
+		
+		$('#globalnavi').after(megaDropdownHTML);
+
+		var $overlay = $('#mk_overlay');
+		var $btn = $('#gnavi01');
+		var $contents = $('.megaDropdown-contents');
+
+		var $cols = $contents.find('.col');
+		var $keywords = $contents.find('.search3 .contents ul');
+
+		$cols.each(function (i) {
+			$(this).html(bunyaHTML[i]);
+		});
+
+		$keywords.html(keywordHTML);
+		
+		$contents.css({
+			'top': $('#headerNavi').outerHeight() + $('#header').outerHeight() + 41 + 'px'
+		});
+		
+		$btn
+			.mouseover(function(){
+				setShow = setTimeout(function() { mdShow(); }, 400);
+			})
+			.mouseout(function(){
+				clearTimeout(setShow);
+			})
+			.click(function(){
+				window.location = $(this).find('a').attr('href');
+			});
+
+		$overlay
+			.mouseenter(function(){
+				setHide = setTimeout(function() { mdHide(); }, 400);
+			})
+			.mouseout(function(){
+				clearTimeout(setHide);
+			});
+
+		// タブキー操作
+		$('#gnavi01 a').focus(function(){
+			setShow = setTimeout(function() { mdShow(); }, 400);
+		    $overlay.unbind('mouseenter mouseout');
+		})
+		$overlay.click(function() {
+			mdHide();
+			mdbind();
+		});
+		$('#gnavi01 a').keydown(function(e){
+			if (e.keyCode === 9 && e.shiftKey === false) {
+				$('div.homeDropdown').focus();
+				setTimeout(function(){
+					$(".megaDropdown-contents a").first().focus();
+				}, 0);
+			}
+		});
+		$('#header a').focus(function(){
+			setHide = setTimeout(function() { mdHide(); }, 400);
+			mdbind();
+		});
+		$("ul li.search3 ul li a").last().keydown(function(e){
+			if (e.keyCode === 9 && e.shiftKey === false) {
+				setHide = setTimeout(function() { mdHide(); } , 400);
+				setTimeout(function(){ $("#gnavi02 a").focus(); }, 0);
+				mdbind();
+			}
+		});
+		$(".col1 a").first().keydown(function(e){
+			if (e.keyCode === 9 && e.shiftKey === true) {
+				setTimeout(function(){ $("ul.menu li#gnavi01 a").focus(); }, 0);
+			}
+		});
+		$("ul.menu li#gnavi01 a").keydown(function(e){
+			if (e.keyCode == 9 && e.shiftKey == true) {
+				setTimeout(function(){ $("#header a").last().focus(); }, 0);
+			}
+		});
+		$("ul.menu li#gnavi07 a").keydown(function(e){
+			if (e.keyCode === 9 && e.shiftKey === false) {
+				setTimeout(function(){ $("#main a").first().focus(); }, 0);
+			}
+		});
+	});
+});
+
+function mdShow() {
+	$('#mk_overlay').fadeIn(60);
+	$('.megaDropdown-contents').fadeIn(240);
+	$('#gnavi01').addClass('mk_megaDropdown_show');
+}
+
+function mdHide() {
+	$('#mk_overlay').fadeOut(240);
+	$('.megaDropdown-contents').hide();
+	$('#gnavi01').removeClass('mk_megaDropdown_show');
+}
+
+function mdbind() {
+	$('#gnavi01').bind('mouseover', function(){
+		setShow = setTimeout(mdShow(), 400);
+	});
+	$('#mk_overlay').bind('mouseenter', function(){
+		setHide = setTimeout(mdHide(), 400);
+	});
+}
+
+
+/* $.mk_overlay
+****************************************************************************/
+$.mk_overlay = function(config){
+	
+	config = $.extend({
+		id: 'mk_overlay',
+		zIndex: '10000',
+		bgColor: '#000',
+		opacity: '0.6',
+		wrapper: '#document',
+		loadDisplay: false
+	},config);
+	
+	
+	var $wrap = $(config.wrapper);
+	var pos = 'fixed';
+	var top = '50%';
+	var h   = '100%';
+	
+	if(navigator.userAgent.indexOf("MSIE 6") != -1){
+		pos = 'absolute';
+		top = ($(window).height() - getScrollTop())/2 + 'px';
+		h   = $wrap.height() + 'px';
+	};
+	
+	
+	var $overlay = $('<div/>', {
+		'id': config.id,
+		'css': {
+			'display': (config.loadDisplay) ? 'block' : 'none',
+			'position': pos,
+			'top': '0',
+			'left': '0',
+			'z-index': config.zIndex,
+			'width': '100%',
+			'height': h,
+			'background-color': config.bgColor,
+			'opacity': config.opacity
+		}
+	});
+	
+	
+	$('body').append($overlay);
+	
+};
+
+
+
+
+/* IE対策：ポジション調整するために使う位置取得function
+****************************************************************************/
+function getScrollTop(){
+	if(document.all) return (document.documentElement.scrollTop) ? document.documentElement.scrollTop : document.body.scrollTop;
+	else return window.pageYOffset;
+}
+
+
+})(MHLW, jQuery, this);

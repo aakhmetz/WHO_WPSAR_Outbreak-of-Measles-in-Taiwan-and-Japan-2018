@@ -1,0 +1,112 @@
+/*
+#------------------------------------------------------------------------
+# Memovie - April 2011 (for Joomla 1.6)
+#
+# Copyright (C) 2007-2011 Gavick.com. All Rights Reserved.
+# License: Copyrighted Commercial Software
+# Website: http://www.gavick.com
+# Support: support@gavick.com 
+*/
+
+/* fonts */
+
+body { font: normal 14px/1.1 "ＭＳ Ｐゴシック","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Helvetica,Verdana,sans-serif !important; }
+/* main layout */
+
+html { height:100%; min-height:100%; border-bottom:1px solid transparent; }
+.gkMain {overflow: hidden;}
+#gkMenuWrap {display:block; width: 100%}
+#gkRight .gkMain:first-child,
+#gkLeft .gkMain:first-child,
+.gkMain:first-child,
+#gkHeader { margin-top: 0; }
+#gkHeader {overflow: inherit!important;margin-left:4px;}
+#gkHeaderheader1 {width:68% !important;}
+/* #gkHeaderheader2 {width:32% !important;} */
+#gkRight .gkMain,
+#gkLeft .gkMain { }
+#gkMain {padding-right:4px !important}
+#gkComponent {margin:0 15px 30px;}
+#gkContentMainbody {margin-right:0 !important;}
+#gkComponentWrap {}
+#gkWrap1,
+#gkWrap3 { margin: 0 auto;background:#fff;}
+#gkWrap2 { margin: 0 auto; overflow:hidden;background:#fff;}
+#gkTop1,
+#gkTop2,
+#gkUser1,
+#gkUser2,
+#gkMainBlock,
+#gkLeftMiddle,
+#gkRightMiddle,
+#gkHeader { border-collapse: collapse; display: table;width:100% }
+#gkUser1,
+#gkUser2 { margin-top: 0!important;}
+.gkCol { display: table-cell; vertical-align:top; }
+#gkTop1,
+#gkTop2 {}
+/* gk_style box-model */
+#gkWrap2 div.content {background:none repeat scroll 0 0 #F1F1F1;color:#666666;padding:10px;margin-bottom:4px}
+div.box > h3.header { }
+div.box > div.content {}
+#gkBottom1 .box,
+#gkBottom2 .box { padding: 0!important; }
+#gkBottom1 {margin:0 4px 4px 4px;}
+#gkBottom2 {margin:0 4px 0 4px}
+/* USER/TOP/BOTTOM columns */
+.gkColLeft > .box {}
+.gkColCenter > .box {}
+.gkColRight > .box { }
+.gkColFull > .box {}
+.gkColFull > .box,
+.gkColLeft > .box,
+.gkColCenter > .box,
+.gkColRight > .box { margin-left: 0; margin-right: 0; }
+.gkColLeft > .box { margin-left: 0; margin-right: 0;  }
+.gkColRight > .box { }
+.gkColFull > .box {}
+#gkBottom1 .gkColFull > .box,
+#gkBottom2 .gkColFull > .box,
+#gkBottom1 .gkColLeft > .box,
+#gkBottom2 .gkColLeft > .box { margin-left: 0!important; margin-right: 10px !important;}
+#gkBottom1 .gkColCenter > .box,
+#gkBottom2 .gkColCenter > .box { margin-left: 10px !important; margin-right: 10px !important; }
+#gkBottom1 .gkColRight > .box,
+#gkBottom2 .gkColRight > .box { margin-left: 10px !important; margin-right: 0 !important; }
+/* TBLR */
+.gkPaddingT { padding-top: 4px !important;}
+.gkPaddingB { padding-bottom: 4px !important; }
+.gkPaddingL { padding-left: 4px !important; }
+.gkPaddingR { padding-right: 4px !important; }
+.gkPaddingTB { padding-top: 4px !important; padding-bottom: 4px !important;}
+.gkPaddingTL { padding-top: 4px !important; padding-right: 4px !important; }
+.gkPaddingTR { padding-top: 0px !important; padding-right: 0px !important; }
+.gkPaddingBL { padding-bottom: 0px !important; padding-left: 0px !important; }
+.gkPaddingBR { padding-bottom: 0px !important; padding-right: 0px !important; }
+.gkPaddingLR { padding-left: 4px !important; padding-right: 4px !important; }
+.gkPaddingTBL { padding-top: 0px !important; padding-bottom: 0px !important; padding-left: 0px!important; }
+.gkPaddingTBR { padding-top: 0px !important; padding-bottom: 0px !important; padding-right: 0px!important;}
+.gkPaddingTLR { padding-top: 0px !important; padding-left: 0px !important; padding-right: 0px!important; }
+.gkPaddingBLR { padding-bottom: 0px !important; padding-left: 0px !important; padding-right: 0px!important; }
+.gkPaddingTBLR { padding: 0px !important;}
+/* Joomla columns */
+
+.cols-1 { display: block; float: none !important; margin: 0 !important; }
+.cols-2 .column-1 { width:48%; float:left;margin:0 }
+.cols-2 .column-2 { width:48%; float:right; margin:0 }
+.cols-3 .column-1 { float:left; width:48%; padding:0px 5px;margin:0 5px 0 0 }
+.cols-3 .column-2 { float:left; width:48%; margin-left:0; padding:0px 5px }
+.cols-3 .column-3 { float:left; width:48%; padding:0px 5px }
+.items-row { overflow:hidden; margin-bottom:10px !important;}
+.items-more {float:left;display:block;width:100%;padding:0 0 20px 0}
+.items-more ol li{line-height:18px;list-style-position:inside;list-style-type:disc;margin-left:1%;width:100%;overflow:visible !important}
+.column-1,
+.column-2,
+.column-3 { padding:10px 5px}
+.column-2 { width:55%; margin-left:40%; }
+.column-3 { width:30% }
+.blog-more { padding:10px 5px }
+
+div.latestnews h5{
+font: bold 12px/1.2 "ＭＳ Ｐゴシック","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Helvetica,Verdana,sans-serif;
+}

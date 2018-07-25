@@ -1,0 +1,1452 @@
+/*
+#------------------------------------------------------------------------
+# Memovie - April 2011 (for Joomla 1.6)
+#
+# Copyright (C) 2007-2011 Gavick.com. All Rights Reserved.
+# License: Copyrighted Commercial Software
+# Website: http://www.gavick.com
+# Support: support@gavick.com 
+*/
+
+/* template.css */
+
+a { color:#12C;text-decoration: underline !important; }
+ul.menu a { text-decoration: none !important; }
+ul.gkmenu a { text-decoration: none !important; }
+/*a { color:#496c94  }
+ */
+a:hover,
+ a:active,
+ a:focus { color:#4682b4 ; text-decoration:underline;}
+div#gkBreadcrumb {  background:transparent url('../images/style1/menu_bg.png') repeat-x 0 bottom  }
+div#gkBreadcrumb div#gkTools a { color:#7e7e7e; border-left:1px solid #c6c6c6 }
+div#gkBreadcrumb a:hover { color:#426182 }
+#gkWrap2 .box>h3,
+ #gkWrap2 .box_menu>h3,
+ #gkWrap2 .box_text>h3,
+ #gkWrap2 .box.color1>h3,
+ #gkWrap2 .box.color2>h3,
+ #gkWrap2 .box.color3>h3 {background:transparent url('../images/style1/module_titles.png') repeat-x; background-position:0 -45px;}
+#gkWrap2 .box.length_title>h3 {background:transparent url('../images/style1/module_titles_height.png') repeat-x; background-position:0 -45px; height: 60px;}
+
+#gkWrap2 .box.color1 h3 { border:none; background-position:0 0 }
+#gkWrap2 .box.color2 h3 { border:none; background-position:0 -89px }
+#gkWrap2 .box>h3>span,
+ #gkWrap2 .box_menu>h3>span,
+ #gkWrap2 .box_text>h3>span,
+ #gkWrap2 .box.color1>h3>span,
+ #gkWrap2 .box.color2>h3>span,
+ #gkWrap2 .box.color3>h3>span {background:transparent url('../images/style1/headings.png') no-repeat; background-position:right -24px}
+#gkWrap2 .box.color1>h3>span { background-position:right 0;}
+#gkWrap2 .box.color2>h3>span { background-position:right -48px;}
+#gkWrap2 .box>h3 span.first-word,
+ #gkWrap2 .box_menu>h3 span.first-word,
+ #gkWrap2 .box_text>h3 span.first-word,
+ #gkWrap2 .box.color3>h3 span.first-word { color:#4a729f }
+#gkWrap2 .box.color1 h3 span.first-word { color:#6081a4 }
+#gkWrap2 .box .content,
+ #gkWrap2 .box_menu .content,
+ #gkWrap2 .box_text .content { background:#f1f1f1; color:#444; }
+ #gkWrap2 .box .content h4.nspHeader { color:#333; }
+#gkWrap2 .box.color1 .content { background:#131313; color:#888 }
+#gkWrap2 .box.color2 .content {  background:#436284; color:#c1ddfc }
+#gkWrap2 .box.color3 .content { background:#fff; color:#666 }
+.clear .content { background:none!important; border:none!important }
+#gkWrap2 .box a,
+ #gkWrap2 .box_menu a,
+ #gkWrap2 .box_text a,
+ #gkWrap2 .box.color3 a {  color:#436284 }
+ #gkWrap2 .box.color3 a.readon {color:#436284 !important}
+#gkWrap2 .box.color1 a { color:#fff }
+#gkWrap2 .box.color1 a:hover { color:#999 }
+#gkWrap2 .box.color2 a { color:#fff }
+#gkWrap2 .box.color2 a:hover { color:#c1ddfc }
+#gkWrap2 .box a:hover,
+ #gkWrap2 .box_menu a:hover,
+ #gkWrap2 .box_text a:hover,
+ #gkWrap2 .box.color3 a:hover { color:#000 }
+#gkWrap2 .box a.readon { background-position:0 -42px }
+#gkWrap2 .box a:hover.readon,
+ #gkWrap2 .box.color3 a:hover.readon { background-position:0 -21px; color:#fff; text-shadow:1px 1px 1px #111c28}
+#gkWrap2 .box.color1 a.readon,
+ .box.color2 a.readon {  background-position:0 100%; color:#fff; text-shadow:1px 1px 1px #111c28  }
+#gkWrap2 .box.color1 a:hover.readon { background-position:0 -21px }
+#gkWrap2 .box.color2 a:hover.readon { background-position:0 0; color:#555; text-shadow:1px 1px 1px #fff }
+#gkBottom2 a { color:#fff }
+#gkBottom2 a:hover {  color:#6081A4 !important}
+
+
+/* menu.css */
+#gkMenu {background:url("../images/style1/menu_bg.png") repeat-x scroll transparent;}
+div.gk-menu {border-top:1px solid #3a5676 }
+div.gk-menu > ul.level0 > li {  border-top:1px solid #3a5676;position:relative;top:-1px;background:transparent url('../images/style1/menu_bullet.png') no-repeat 100% 0}
+.gk-menu>ul.level0>li:hover,
+.gk-menu>ul.level0>li.active,
+.gk-menu>li:hover,
+.gk-menu>li.active,
+.gk-menu>ul>li:hover,
+.gk-menu>ul>li.active {border-top:1px solid #233140}
+.gk-menu ul.level0 > li > a > span.menu-desc,
+.gk-menu > li > a > span.menu-desc,
+.gk-menu > ul > li > a > span.menu-desc,
+div#gkDropMain > ul > li > a > span.menu-desc {color:#A5C0DC}
+.gk-menu ul.level1 li a {background:url("../images/style1/submenu_bg.png") no-repeat scroll 0 top #484848;}
+.gk-menu .group-title .menu-title {background:url("../images/style1/submenu_bg.png") no-repeat scroll right bottom #484848 !important;}
+.gk-menu ul.level0 > li li span.menu-desc, 
+.gk-menu > li li span.menu-desc, .gk-menu > ul > li li span.menu-desc {background: #3c3f41 !important}
+
+div#gkDropMain {border-top:1px solid #3a5676;border-bottom:1px solid #3E5978;}
+div#gkDropMain > ul > li { border-top:1px solid #3a5676; background:transparent url('../images/style1/menu_bullet.png') no-repeat 100% 0}
+div#gkDropMain>ul>li:hover,
+div#gkDropMain>ul>li.active {border-top:1px solid #fff}
+div#gkSubmenu {background:none repeat scroll 0 0 #727B83;border-top:1px solid #6C747C;border-bottom: 1px solid #bebebe;}
+div#gkDropSub ul > li ul > li a {background:url("../images/style1/submenu_bg.png") no-repeat scroll 0 top #484848 !important }
+div#gkSubmenu ul li a { color:#fff; display:block; text-decoration:none; text-transform:uppercase }
+div#gkSubmenu ul li a span {border-left:1px solid #87919A}
+div#gkSubmenu ul li a:hover { color:#2d353c  }
+/* joomla.css */
+.button:hover,
+.button:focus { background: #496C94; }
+a.readon { background:url('../images/style1/readon.png') no-repeat 0 0; }
+a.readon:hover,
+ a.readon:active,
+ a.readon:focus {background-position:0 -21px; color:#fff; text-shadow:1px 1px 1px #213040 }
+div.box ul li { border-bottom:1px solid #fff }
+div.box.color1 ul li { border-bottom:1px solid #333 }
+div.box.color2 ul li { border-bottom:1px solid #55779c}
+div.box.color3 ul li { border-bottom:1px solid #eee }
+div.box_menu span.separator {background: #F7FAFE;}
+#gkBottom1 ul li,
+#gkBottom2 ul li { border:none }
+div.pagination p.counter { background:#496C94; color:#fff }
+#login-form ul li a,
+#gkPopupContent a { color:#6b90b9}
+#gkPopupContent .button {background:#496c94  }
+.breadcrumbs > span.pathway {color:#426182 }
+/*gkstuff*/
+.nspBotInterface .nspPagination li,
+.nspTopInterface .nspPagination li,
+.nspBotInterface .nspPagination li.active,
+.nspBotInterface .nspPagination li:hover,
+.nspTopInterface .nspPagination li:hover,
+.nspTopInterface .nspPagination li.active,
+.nspBotInterface .prev,
+.nspTopInterface .prev,
+.nspBotInterface .next,
+.nspTopInterface .next,
+.nspBotInterface .prev:hover,
+.nspTopInterface .prev:hover,
+.nspBotInterface .next:hover,
+.nspTopInterface .next:hover {  background-image:url('../images/style1/nsp-interface.png');   }
+.box.color1 .nspInfo { color: #5D5D5D }
+.box.color1 .nspLinks ul li p { color: #ccc }
+.box.color1 .nspLinks ul li.odd {background: #263546}
+.box.color1 .nspLinks ul li.even { background:#222}
+.box.color1 .nspLinks ul li:hover { background: #333 !important }
+.box.color2 .nspInfo { color:#C1DDFC}
+.box.color2 .nspLinks ul li p { color:#C1DDFC  }
+.box.color2 .nspLinks ul li.odd { background: #3c5774 }
+.box.color2 .nspLinks ul li.even {  background:#263546 }
+.box.color2 .nspLinks ul li:hover { background:#31445a }
+
+ul.gkTab {background:url("../images/style1/module_titles.png") repeat-x 0 -45px transparent;}
+ul.gkTabs li { background:transparent url('../images/style1/tabs_left.png') no-repeat 0 -24px; border:none!important}
+ul.gkTabs li span {background:transparent url('../images/style1/headings.png') no-repeat right -24px }
+ul.gkTabs li.active,
+ul.gkTabs li:hover,
+.box.color1 ul.gkTabs li:hover span,
+.box.color1 ul.gkTabs li .active span { color:#4A729F!important }
+.box.color1 ul.gkTabs {background:url("../images/style1/module_titles.png") repeat-x scroll 0 0 transparent; border-bottom:none!important;}
+.box.color1 ul.gkTabs li {  background:transparent url('../images/style1/tabs_left.png') no-repeat 0 0 }
+.box.color1 ul.gkTabs li span {background:transparent url('../images/style1/headings.png') no-repeat right 0; color:#fff  }
+.box.color2 ul.gkTabs { background:url("../images/style1/module_titles.png") repeat-x 0 -90px transparent; border-bottom:none!important;}
+.box.color2 ul.gkTabs li { background:transparent url('../images/style1/tabs_left.png') no-repeat 0 -48px }
+.box.color2 ul.gkTabs li span { background:transparent url('../images/style1/headings.png') no-repeat right -48px; color:#fff }
+.box.color2 ul.gkTabs li.active span,
+ .box.color2 ul.gkTabs li:hover span {color:#C1DDFC!important; text-shadow:1px 1px 2px #243443}
+ 
+ /* k2.css */
+
+a.k2ReadMore:hover,
+ div.itemAuthorBlock div.itemAuthorDetails h3.authorName,
+ div.itemComments ul.itemCommentsList li span.commentAuthorName span,
+ div.catItemReadMore a:hover,
+ div.userBlock h2,
+ div.genericItemReadMore a:hover,
+ div.latestItemsCategory h2 a:hover { color:#496C94 }
+div.itemToolbar,
+ div.itemAuthorBlock,
+ div.subCategory,
+ div#itemListLinks,
+ div.userBlock,
+ div.latestItemsUser,
+ div.k2TagCloudBlock a:hover { background:#f2f6fc }
+div.k2LatestCommentsBlock ul li span.lcUsername { background:#4A729F }
+div.moduletable_color2 div.k2LatestCommentsBlock ul li { border:1px dotted #5f80a5!important; background:#304a67 }
+div.moduletable_color2 div.k2LatestCommentsBlock ul li span.lcUsername { background:#4A729F; color:#fff }
+div.moduletable_color2 div.k2LatestCommentsBlock ul li img.lcAvatar { background:#304A67; border-color:#436284 }
+div.moduletable_color2 div.k2ItemsBlock ul li span.moduleItemTags { background:#304a67 }
+.k2Pagination .counter span {background:#496C94;}
+
+/* 一般記事向けcss */
+	
+  #niid html * {
+      box-sizing:border-box;
+      -moz-box-sizing:border-box;
+  }
+
+  #niid * {
+      margin:0;
+      padding:0;
+      border:none;
+      font-style:normal;
+      font-weight:normal;
+      font-size:100%;
+  }
+  
+  #niid body {
+      margin:0;
+      padding:0;
+      color:#444444;
+      background:#f5f5f5;
+      font-size:100%;
+      font-family:"ＭＳ Ｐゴシック","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Helvetica,Verdana,sans-serif 
+      letter-spacing:nomal;
+  }
+  
+  #niid h1, #niid h2,#niid h3,#niid h4,#niid h5,#niid h6,#niid p,#niid ul,#niid li,#niid ol,#niid dl,#niid dt,#niid dd,#niid table,#niid blockquote,#niid address,#niid div {
+      margin:0;
+      padding:0;
+      text-align:left;
+      letter-spacing:1px;
+      font-style:2em;
+  }
+  
+
+  #niid h1,#niid h2,#niid h3,#niid h4,#niid h5,#niid h6 {
+      color:#333333;
+      font-weight:bold;
+  }
+  
+  #niid h1 *,#niid h2 *,#niid h3 *,#niid h4 *,#niid h5 *,#niid h6 * {
+      color:#333333;
+      font-weight:bold;
+  }
+  
+  #niid h1 {
+      margin:0.6em 0.2em;
+      /*margin:1.5% 1.5%;*/
+      padding:0.2em;
+      font-size:1.4em;
+      /*border:1px solid #000;*/
+  }
+  
+  #niid h2 {
+      margin:0.6em 0.3em;
+      padding:0.2em;
+      font-size:1.2em;
+      /*border:1px solid #000;*/
+  }
+  
+  #niid h3 {
+      /*margin:1em 1.2em;*/
+      margin:1.3em 1.1em 0.6em 0.4em;
+      padding:1px 0.3em;
+      color:#000066;
+      font-size:1em;
+      background-color:#f5f5f5;
+      border-top:1px solid #dddddd;
+      border-right:7px double #000066;
+      border-bottom:1px solid #dddddd;
+      border-left:7px double #000066;
+  }
+  
+  #niid h4 {
+      margin:0.1em 2em;
+      padding:0.3em;
+      font-size:0.9em;
+  }
+  
+  /*h5 {
+      margin:0.4em 2em;
+      padding:0.3em;
+      font-size:0.9em;
+      font-style:italic;
+      color:#666666;
+  }*/
+  
+  #niid h5 {
+      margin:0.1em 2.3em;
+      padding:0.1em;
+      color:#666666;
+      font-size:0.8em;
+      /*font-style:italic;*/
+      text-align:right;
+  }
+  
+  /*h6 {
+      margin:0.2em 2.3em;
+      padding:0.3em;
+      font-size:0.8em;
+  }*/
+  
+  #niid h6 {
+      margin:0.1em 2.3em;
+      padding:0.1em;
+      color:#666666;
+      font-size:0.8em;
+      text-align:right;
+  }
+  
+  #niid p {
+      font-size:0.9em;
+      margin:0.3em 2.1em 1em 1.0em;
+      padding:0.4em 0.5em;
+      line-height:1.4em;
+  }
+  
+  #niid p.summary {
+      background-color:#f8f8f8;
+  }
+  
+  #niid p.intro {
+      border-top:1px solid #bbbbbb;
+      border-bottom:1px solid #bbbbbb;
+      background:#fcfcfc;
+      margin-left:0%;
+      width:95%;
+  }
+  
+  #niid p.notes {
+      border:4px double #bbbbbb;
+      background-color:#fffff0;
+  }
+  
+  #niid blockquote {
+      margin:1.8em 3.5em 1.8em 0.2em;
+      padding:0.8em 0.8em;
+      font-size:0.9em;
+      font-family:serif;
+      line-height:1.4em;
+      border-left:solid 8px #9099aa;
+      color:#708090;
+  }
+  
+  #niid blockquote p {
+      margin:0;
+      padding:0;
+  }
+  
+  #niid ul,#niid ol {
+        /*margin:0.3em 4em 0.8em 4em;*/
+        /*margin:0.3em 2.4em 0.8em 2.4em;*/
+        margin:0.8em 2.1em 0.8em 0.5em;
+  }
+  
+  #niid ol {
+    margin:0.8em 2.1em 0.8em 0.7em;
+  }
+  #niid ul {
+      padding:0.1 0.1em 0 1.4em;
+      list-style-position:outside;
+      list-style-type:disc;
+  }
+  
+  #niid li {
+      margin:0.2em 0;
+      font-size:0.9em;
+      line-height:1.3em;
+  }
+  
+  #niid ul ul {
+      margin:0;
+      list-style-type:circle;
+      /*border:1px solid #000;*/
+  }
+  
+  #niid ul ul ul {
+      margin:0;
+      list-style-type:square;
+  }
+  
+  #niid li.arrowRed {
+      list-style-image:url('/niid/images/niid_img/arrow1.gif');
+      margin:0.2em;
+  }
+  
+  #niid li.arrowPink {
+      list-style-image:url('/niid/images/niid_img/arrow2.gif');
+      margin:0.2em;
+  }
+  
+  #niid li.arrowGreen {
+      list-style-image:url('/niid/images/niid_img/arrow3.gif');
+      margin:0.2em;
+  }
+  
+  #niid ol {
+      padding:0 0 0 1.8em;
+      list-style-type:upper-roman;
+      /*border:1px solid #000;*/
+  }
+  
+  #niid ol ol {
+      margin:0;
+      list-style-type:decimal;
+      font-size:1em;
+  }
+  
+  #niid ol ol ol{
+      margin:0;
+      list-style-type:lower-roman;
+      font-size:1em;
+  }
+  
+  #niid ol ol ol ol{
+      margin:0;
+      list-style-type:upper-latin;
+      font-size:1em;
+  }
+  
+  #niid ol ol ol ol ol{
+      margin:0;
+      list-style-type:lower-latin;
+      font-size:1em;
+  }
+  
+  #niid dl {
+      margin:0.5em 2.2em;
+      padding:0.1em 0.2em;
+  }
+  
+  #niid dt {
+      margin:0.2em 0;
+      padding:0.1em 0.2em;
+      font-weight:bold;
+      font-size:0.9em;
+  }
+  
+  #niid dd {
+      margin:0.2em 1em 0.4em 1em;
+      padding:0.1em 0.2em;
+      font-size:0.9em;
+      line-height:1.4em;
+      /*border:1px solid #000000;*/
+  }
+  
+  #niid dl ul {
+      /*margin:0 0.1em;*/
+      margin:0;
+      /*font-size:1.1em;*/
+  }
+  
+  #niid dl ol {
+      margin:0 0.1em;
+  }
+  
+  #niid table {
+      margin:0.2em 3.2em 1.5em 3.2em;
+      table-layout:auto;
+      border-collapse:collapse;
+      border-top:1px solid #000066;
+      border-bottom:1px solid #000066;
+      border-spacing:1px;
+  }
+  
+  #niid td,th {
+      padding:0.2em 0.8em;
+      font-size:0.9em;
+      empty-cels:show;
+  }
+  
+  #niid th {
+      color:#ffffff;
+      font-weight:bold;
+      text-align:center;
+      background:#6959cd;
+  }
+  
+  #niid th.sideStyle {
+      text-align:left;
+      border-bottom:1px solid #000066;
+  }
+  
+  #niid td {
+      border-top:1px solid #000;
+      background:#fcfcfc;;
+      line-height:1.4em;
+  }
+  
+  #niid table.layout {
+      margin:0;
+      padding:0;
+      border:none;
+  }
+  
+  #niid .layout td, .layout th {
+      padding:0;
+  }
+  
+  #niid .layout th {
+      color:#444444;
+      font-weight:bold;
+      text-align:center;
+      background:#ffffff;
+  }
+  
+  #niid .layout td {
+      border:none;
+      background:#ffffff;
+  }
+  
+  #niid .simple td {
+      border:none;
+  }
+  
+  #niid td.hasBorder {
+      border-right:2px solid #6959cd
+  }
+  
+  #niid caption {
+      display:table-caption;
+      /*text-align:left;*/
+      caption-side:top;
+      font-size:0.8em;
+  }
+  
+  #niid td ul, #niid td ol, #niid td dl {
+      margin:0 0 0 1.2em;
+      padding:0;
+      font-size:1.1em;
+  }
+  
+  #niid address {
+      margin:0 5% 0.1em 5%;
+      padding:0.2em;
+      color:#888888;
+      font-size:0.8em;
+      font-style:normal;
+      text-align:right;
+      border-top:1px dashed #cccccc;
+  }
+  
+  #niid hr {
+      width:90%;
+      color:#ffffff;
+      margin-left:auto;
+      margin-right:auto;
+      margin-bottom:0;
+      text-align:center; /* for IE hack */
+      border-bottom:2px dotted #bbbbbb;
+      border-top:none;
+      border-right:none;
+      border-left:none;
+  }
+  
+  #niid img {
+      border:none;
+  }
+  
+  #niid img.titleImage {
+      border:none;
+      display:block;
+  }
+  
+  #niid strong {
+      font-weight:bold;
+      font-style:normal;
+      color:red;
+  }
+  
+  #niid em {
+      font-weight:bold;
+      font-style:nomal;
+  }
+  
+  #niid dfn {
+      color:#666666;
+      background-color:#f8f8f8;
+      font-style:normal;
+      font-weight:bold;
+      border-bottom:3px double #666666;
+  }
+  
+  #niid q { quotes: "\"" "\""; }
+  /*q:before { content: open-quote }*/
+  /*q:after { content: close-quote }*/
+
+
+  #niid div.content, #niid div.double {
+      border:0;
+      width:550px;
+  /*    margin: 0px auto; */
+      background:#ffffff;
+  }
+  
+  #niid div.main {
+      border:0;
+      width:550px;
+      background:#ffffcc;
+  }
+  
+  #niid div.leftPart {
+      float:left;
+      width:500px;
+      /*border:1px solid #000;*/
+  }
+  
+  #niid div.rightPart {
+      float:left;
+      width:250px;
+      color: #336699;
+      background-color: #d0d0f0;
+      /*border:1px solid #000;*/
+  }
+  
+  #niid .clear {
+      clear:both;
+  }
+  
+  #niid div.topics {
+      margin:1.2em 2.6em 2em 2.6em;
+      padding:0;
+      border:1px solid #000088;
+      background-color:#f0f0fc;
+  }
+  
+  #niid div.topics * {
+      margin:0.2em;
+  }
+  
+  #niid div.topics h3, #niid div.topics h4 {
+      color:#ffffff;
+      /*margin:-28px 0 0 -1px;*/
+      margin:0;
+      padding:2px 8px;
+      background-color:#224499;
+      border-top:none;
+      border-right:none;
+      /*border-bottom:1px solid #0000aa;*/
+      border-bottom:none;
+      border-left:none;
+  }
+  
+  #niid div.navi {
+      background:#6666ff;
+      margin:0;
+      padding:5px;
+      border:none;
+      font-size: 0.8em;
+      width:750px;
+  }
+  
+  #niid div.navi a {
+      color:#fff;
+      text-decoration:none;
+      font-weight: bold;
+  }
+  
+  #niid div.navi a:hover {
+      color:#ff0000;
+      text-decoration:underline;
+      font-weight:bold;
+  }
+  
+  #niid div.copyright {
+      clear:both;
+      margin:3em 0 0 0;
+      padding: 5px;
+      color: #ffffff;
+      background:#6666ff;
+      font-size: 0.75em;
+      font-weight: bold;
+      text-align: center;
+  }
+  
+  #niid div.lastModified {
+      font-family: "ＭＳ Ｐゴシック","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Helvetica,Verdana,sans-serif;
+      font-size:0.8em;
+      margin:1em 5%;
+      padding:0.2em 0 0 0.5em;
+      border-top:1px solid #999;
+  }
+
+/* 疾患別トップページｃｓｓ */
+
+div#disease {
+	width:550px;
+}
+		
+
+#disease ul li span#none-article{
+  padding-left:5px;
+  color:gray;
+  font-size:90%;
+}
+#disease h1{
+  background:url(/niid/images/shikkan-top/bar.jpg) no-repeat;
+  width:530px;
+  height:21px;
+  font-size: 120%;
+  color:white;
+  padding: 3px 0px 0px 6px;
+  margin: 14px 0px 8px 0px;
+  border: thin solid #000000;
+  letter-spacing: 0.1em;
+}
+#disease h2.epi{
+  background:url(/niid/images/shikkan-top/epi-bar.jpg) no-repeat;
+  width:440px;
+  height:30px;
+  font-size: 120%;
+  padding: 4px 0px 0px 34px;
+  margin: 8px 0px 0px 4px;
+}
+#disease ul.weblinks{
+  font-size: 100%;
+  padding: 0px 0px 0px 12px;
+  margin: 2px 0px 2px 14px;
+  list-style-type: disc;
+}
+#disease ul.level3{
+  font-size: 115%;
+  padding: 0px 0px 0px 36px;
+  margin: 0px 0px 0px 0px;
+}
+#disease li {
+/*  margin-bottom: -10px;
+  margin-top: -6px;
+*/
+ line-height:130%;
+}
+#disease .level2{
+  font-size: 120%;
+  padding: 0px 0px 0px 20px;
+  margin: 4px 0px 0px 0px;
+}
+
+div#disease ul.left {
+	margin:1%;
+}
+/* for biochem */
+
+    body    div#biochem { background-image: url(BACK02.gif); font-family: "ヒラギノ角ゴシックPro W3", Osaka, "ＭＳ Ｐゴシック"; font-weight:bold; font-size:11pt; text-align: center;}
+    body div#biochem  {margin: 0 auto ;width:550px;}
+    div#biochem h1  { font-size: 150%; line-height: 1em; text-align: center; margin-top: 1em; margin-bottom: 1em;}
+    div#biochem h2  { font-size: 125%; line-height: 1em; text-align: center; margin-top: 1em; margin-bottom: 1em;}
+    div#biochem h3  { font-size: 125%; line-height: 1em; text-align: left; margin-top: 1em; margin-bottom: 1em; padding-left: 2em; }
+    div#biochem h4  { font-size: 125%; color: #FFFFFF; line-height: 1em; text-align: center; margin-left: 1%; margin-top: 5px; margin-bottom: 15px; padding-top: 2px; padding-bottom: 2px; background-color: #6600CC; width: 98%}
+    div#biochem img.home    { margin-top:20px; margin-bottom:10px;}
+    div#biochem img.picture { margin-top:1em; margin-bottom:1em; padding: 1em; }
+    div#biochem p   {text-align: justify; line-height: 1.5em; text-indent: 1em; margin-left:10px; margin-top: 10px; margin-bottom: 10px; width: 100%}
+    div#biochem table       {margin: 10px }
+    div#biochem ul  { text-align: left; line-height: 150%; margin-top: 1em; margin-bottom: 1em;}
+    div#biochem ul.link li  { text-align: center; list-style-type: none; list-style-position: inside; margin-bottom: 1em; padding-left: 0;}
+    div#biochem ul.link2 li { list-style-position: inside; margin-top: 1em; margin-bottom: 1em; padding-left: 2em}
+    div#biochem ul.none     { list-style-type: none; list-style-position: outside; padding-left: 4em;}
+    div#biochem ul.none1    { list-style-type: none; list-style-image: url(b-hosi2-c.gif); list-style-position: outside; margin: 2em; padding-left: 2em;}
+    div#biochem ul.none2    { list-style-type: none; list-style-image: url(b-hosi2-d.gif); list-style-position: outside; margin: 2em; padding-left: 2em;}
+    div#biochem .clear      { clear: both;}
+    div#biochem .staff      {width: 95%; border-color:gray; border-width: 2px; border-style: groove}
+    div#biochem .subtitle   { font-size: 125%; color: red; text-align: center; margin-top: 2em; margin-bottom: 1em;}
+    div#biochem .title  { font-size: 150%; border-bottom: 3px solid #FFFF33; border-top: 3px solid #FFFF33; background-color: #FFFFCC; text-align: center; margin-top: 1em; margin-bottom: 1em; margin-left: auto; padding: 6px; width: 300px}
+    div#biochem .title1  { font-size: 150%; border-bottom: 3px solid #FFFF33; border-top: 3px solid #FFFF33; background-color: #FFFFCC; text-align: center; margin-top: 1em; margin-bottom: 1em; margin-left: auto; padding: 6px; width: 400px}
+    div#biochem .title2  { font-size: 125%; border-bottom: 2px solid #FFFF33; border-top: 2px solid #FFFF33; text-align: center; margin-top: 1em; margin-bottom: 1em; padding: 4px; width: 300px}
+    div#biochem .title3  { font-size: 120%; border-bottom: 2px solid #FF99CC; border-top: 1px solid #FF99CC; background-color: #FFCCCC; text-align: center; margin-top: 0.5em; margin-bottom: 0.5em; padding: 4px; width: 300px}
+    div#biochem .title11  { font-size: 150%; border-bottom: 3px solid #FFFF33; border-top: 3px solid #FFFF33; background-color: #FFFFCC; text-align: center; margin-top: 1em; margin-bottom: 1em; margin-left: auto; padding: 6px; width: 500px}
+    div#biochem #border     {margin-left: auto; margin-right: auto; width: 100%;}
+    div#biochem #column     {margin-left: auto; margin-right: auto; width: 400px; background-color: #FFFFCC;}
+    div#biochem #footer     { margin-left: auto; margin-right: auto; width: 95%; height: 60px}
+    div#biochem #header     { margin-left: auto; margin-right: auto; width: 95%; height: 80px}
+    div#biochem #main       { background-color: #FFFFFF; margin-left: auto; margin-right: auto; width: 95%; border-color:gray; border-width: 3px; border-style: ridge}
+    div#biochem #sub1       { margin-left: 20px; margin-right: 0px;  margin-top: 20px; margin-bottom: 20px; width: 220px; height: 320px;    float: left;}
+    div#biochem #sub2       { margin-top: 20px; margin-bottom: 20px; width: 300px; height: 200px;   float: left;}
+    div#biochem #sub3       { margin-top: 10px; width: 420px; height: 150px; float: left;}
+    div#biochem #sub4       { margin-top: 10px; width: 180px; height: 150px;        float: left;}
+    div#biochem #tab { margin-top: 10px; font-size: 9pt;}
+    div#biochem #tab a { background-color: #99FFCC; color: #000000; text-decoration: none; padding: 5px; border-width: 2px;; border-color: #CCFFCC; border-style : outset}
+    div#biochem #tab a:link, #tab a:visited { color: #000000; text-decoration: none;}
+    div#biochem #tab a:hover        { background-color: #33FF99; position: relative; top: 1px; left: 1px;  border-color : #33FF99}
+    div#biochem #tab a:active       { background-color: #33FF99; position: relative; top: 1px; left: 1px;  border-color : #33FF99}
+
+
+    div#iasr-list        {
+        width: 550px;
+        font-size:12pt;
+        }
+        #iasr-list table   {
+        border-collapse: collapse;      border-spacing: 0;
+        width: 100%;
+        margin-bottom: 30px;
+        margin-left:1%;
+        }
+        #iasr-list table thead tr td  {
+        font-weight:bold;
+        font-size:120%;
+        }
+        #iasr-list h1   {
+        width: 100%;
+        margin-left:5%;
+        }
+        #iasr-list * th, #iasr-list td  {
+        padding: 5px 10px;
+        color: #1D5C79;
+        }
+        #iasr-list td.head {
+        background: #CAE5F1 url(/niid/images/idsc/iasr/th.jpg) repeat-x;
+        border-top: 2px solid #1D5C79;
+        border-bottom: 2px solid #1D5C79;
+        }
+        #iasr-list  td        {
+        background: #F4FAFC url(/niid/images/idsc/iasr/td.jpg) repeat-x;
+        border-bottom: 1px solid #1D5C79;
+        font-size:80%;
+        }
+
+
+        #iasr-list .gaikoku td.head {
+        background: #FF9CE7 url(/niid/images/idsc/iasr/byogen-th.jpg) repeat-x;
+        border-top: 2px solid #1D5C79;
+        border-bottom: 2px solid #1D5C79;
+        }
+        #iasr-list  .gaikoku td        {
+        background: #FEF1FB url(/niid/images/idsc/iasr/byogen-td.jpg) repeat-x;
+        border-bottom: 1px solid #1D5C79;
+        font-size:80%;
+        }
+
+        #iasr-list .souran td.head {
+        background: #85D2BA url(/niid/images/idsc/iasr/souran-th.jpg) repeat-x;
+        border-top: 2px solid #1D5C79;
+        border-bottom: 2px solid #1D5C79;
+        }
+        #iasr-list  .souran td        {
+        background: #effffa url(/niid/images/idsc/iasr/souran-td.jpg) repeat-x;
+        border-bottom: 1px solid #1D5C79;
+        font-size:80%;
+        }
+
+
+        /*----*/
+        #iasr-list #ie6FixedSample {
+        border: solid 1px #002092;
+        padding: 15px;
+        }
+
+        #iasr-list .kokunai td.head {
+        background: #CAE5F1 url(/niid/images/idsc/iasr/chumoku-th.jpg) repeat-x;
+        border-top: 2px solid #1D5C79;
+        border-bottom: 2px solid #1D5C79;
+        }
+        #iasr-list  .kokunai td        {
+        background: #F4FAFC url(/niid/images/idsc/iasr/chumoku-td.jpg) repeat-x;
+        border-bottom: 1px solid #1D5C79;
+        font-size:80%;
+        }
+
+        #iasr-list .sokuhou td.head {
+        background: #FFB19C url(/niid/images/idsc/iasr/sokuhou-th.jpg) repeat-x;
+        border-top: 2px solid #1D5C79;
+        border-bottom: 2px solid #1D5C79;
+        }
+        #iasr-list  .sokuhou td        {
+        background: #FCF4F1 url(/niid/images/idsc/iasr/sokuhou-td.jpg) repeat-x;
+        border-bottom: 1px solid #1D5C79;
+        font-size:80%;
+        }
+
+
+        /* --------------------------
+        for IE6 styles.
+        ----------------------------- */
+        * html #iasr-list, * html body #iasr-list{
+        height: 100%;
+        overflow-y: hidden;
+        overflow-x: auto;
+        }
+        * html #iasr-list #cover {
+        overflow: auto;
+        position: relative;
+        width: 100%;
+        height: 100%;
+     }
+
+
+/* for li */
+					/* 2013年5月14日修正 */
+					div.item-page ol, div.item-page ul{ 
+					  margin:5% 0% 5% 4%;
+					}
+					div.item-page ol, div.item-page ul.idwrc_margin{
+					    margin:2% 0% 2% 4%;
+					}
+
+/* for li */
+					/* 2013年5月14日追記 */
+					div.blog ol, div.blog ul{ 
+					  margin:5% 0% 5% 4%;
+					}
+					div.blog ol, div.blog ul.idwrc_margin{
+					    margin:2% 0% 2% 4%;
+					}
+
+/* for disease-list */
+#disease-list *{
+ margin:0;
+ padding:0;
+}
+#disease-list h1{
+  font-size:200%;
+}
+#disease-list ul{
+  list-style:none;
+}
+#disease-list ul li {
+  width:100%;
+  background: transparent none repeat scroll 0% 0%;
+  display: block;
+  margin: 0px 0px 0px 2%;
+  padding: 3px;
+}
+#disease-list ul li:hover {
+  background: #ffffe0;
+ text-decoration: underline;
+}
+#disease-list ul li a{
+ color: #0A29A5;
+ text-decoration: none;
+ font-size:110%;
+}
+/*
+#disease-list ul li a:hover {
+}*/
+
+div#disease-list div.introd{
+ margin:10px;
+ font-size:105%;
+}
+
+#iasr_2 ul.iasrs {
+ list-style-type: disc;
+ margin-left:15px;
+}
+
+#iasr_2 ul.iasrs h4{
+  line-height:110%;
+  font-size:100%;
+  font-weight:normal;
+  padding-bottom:4px;
+  
+}
+
+
+    #iasr_idx , #iasr_1, #iasr_2 , #iasr_3, #iasr_idx ul, #iasr_1 ul, #iasr_2 ul, #iasr_3 ul{margin:0px;}
+    
+    #iasr_idx h1, #iasr_idx h2 , #iasr_1 h1,#iasr_2 h1,#asr_1, #iasr_2 , #iasr_3,#iasr_1 ul, #iasr_2 ul, #iasr_3 ul{margin:0px;}
+    #iasr_idx h1, #iasr_1 h1,#iasr_2 h1,#iasr_3 h1{
+    background:url(/niid/images/iasr/iasr_1_h1.jpg) no-repeat;
+    background-repeat : repeat-x;
+    width:230px;
+    height:27px;
+    color:black;
+    font-size: 130%;
+    padding: 3px 0px 8px 5px;
+    margin: 5px 0px 0px 0px;
+    font-wight:normal;
+    }
+    #iasr_idx h1{
+      width:95%;
+   letter-spacing: 0.3em;}
+    #iasr_2 h1{
+    background:url(/niid/images/iasr/iasr2bg.jpg) no-repeat;
+    color:black;
+    }
+    #iasr_idx h2, #iasr_1 h2,#iasr_2 h2, #iasr_1 h3,#iasr_2 h3{
+    background:url(/niid/images/iasr/iasr_1_h1.jpg) no-repeat;
+    background-repeat : repeat-x;
+    width:206px;
+    height:25px;
+    color:black;
+    font-size: 120%;
+    padding: 4px 5px 5px 5px;
+    margin: 5px 0px 0px 0px;
+    }
+
+    #iasr_idx h2{
+     width:300px;
+    }
+    #iasr_2 h2{background: url(/niid/images/iasr/iasr21bg.jpg) no-repeat;
+    color:black;
+    }
+    #iasr_1 h3, #iasr_2 h3{background:url(/niid/images/iasr/iasr111bg.jpg) no-repeat;
+    width:147px;
+    height:25px;
+    color:black;
+    font-size: 120%;
+    padding: 7px 5px 0px 5px;
+    margin: 5px 0px;
+    font-wight:normal;
+    }
+    #iasr_2 h3{background: url(/niid/images/iasr/iasr211bg.jpg) no-repeat;
+    margin-left:0px;
+    color:black;
+    }
+    #iasr_3 h1{
+    background:url(/niid/images/iasr/iasr3bg.jpg) no-repeat;
+    color:black;
+    }
+    #iasr_idx .level2, #iasr_1 .level2, #iasr_2 .level2, #iasr_3 .level2{font-size: 120%;}
+    #iasr_idx .level3,   #iasr_1 .level3, #iasr_2 .level3, #iasr_3 .level3{
+    font-size: 90%;
+    margin-left: 7px;
+    }
+    #iasr_head{width:730px}
+    #iasr_head .left_head{float:left; width:75%}
+    #iasr_head .right_head{float:right; width:20%}
+    .exp1{
+    font-size: 95%;
+    padding-top:7px;
+    }
+    #exp2{
+    font-size: 140%;
+    padding-top:6px;
+    }
+    #about-iasr{
+    color: #1e90ff;
+    }
+    #iasr_main {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    }
+    #iasr_1 div.toku a{
+    font-size:120%;
+    }
+    #iasr_3 h1{
+    background:url(/niid/images/iasr/iasr_1_h1.jpg) no-repeat;
+     background-repeat : repeat-x;
+    width:420px;
+    height:27px;
+    color:black;
+    font-size: 140%;
+    padding: 5px 0px 8px 5px;
+    margin: 5px 0px 0px 0px;
+    font-wight:normal;
+    }
+    
+    #iasr_2 h1{
+    background:url(/niid/images/iasr/iasr2bg.jpg) no-repeat;
+    color:black;
+    }
+    
+    #iasr_1 h2,#iasr_2 h2, #iasr_1 h3,#iasr_2 h3{
+    background:url(/niid/images/iasr/iasr_1_h1.jpg) no-repeat;
+   background-repeat : repeat-x;
+
+      width:300px;
+      height:25px;
+      color:black;
+      font-size: 120%;
+      padding: 4px 5px 5px 5px;
+      margin: 5px 0px 0px 0px;
+    }
+    #iasr_2 h2{background: url(/niid/images/iasr/iasr21bg.jpg) no-repeat;
+    color:black;
+    }
+    #iasr_1 h3, #iasr_2 h3{background:url(/niid/images/iasr/iasr111bg.jpg) no-repeat;
+    width:147px;
+    height:25px;
+    color:black;
+    font-size: 120%;
+    padding: 7px 5px 0px 5px;
+    margin: 5px 0px;
+    font-wight:normal;
+    }
+    #iasr_2 h3{background: url(/niid/images/iasr/iasr211bg.jpg) no-repeat;
+    margin-left:0px;
+    color:black;
+    }
+    #iasr_3 h1{
+    background:url(/niid/images/iasr/iasr3bg.jpg) no-repeat;
+    color:black;
+    }
+    #iasr_1 .level2, #iasr_2 .level2, #iasr_3 .level2{font-size: 120%;}
+    #iasr_1 .level3, #iasr_2 .level3, #iasr_3 .level3{
+    font-size: 90%;
+    margin-left: 7px;
+    }
+    #iasr_head{width:730px}
+    #iasr_head .left_head{float:left; width:75%}
+    #iasr_head .right_head{float:right; width:20%}
+    .exp1{
+    font-size: 95%;
+    padding-top:7px;
+    }
+    #exp2{
+    font-size: 140%;
+    padding-top:6px;
+    }
+    #about-iasr{
+    color: #1e90ff;
+    }
+    strong{
+    font-size: 105%;
+    }
+    #iasr_main {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    }
+    #iasr_1 div.toku a{
+    font-size:120%;
+    }
+   #iasr_idx ul.level3{
+     list-style-type:disc;
+     padding-left:10px;
+   }
+   #iasr_idx ul.level3 li{
+     line-height:110%;
+     padding:5px 0;
+   }
+   #iasr_idx div.toku a{
+     font-size:110%;
+     font-weight:bold;
+   }
+
+
+div#gkBg div#gkWrap1 div#gkHeader div.title_padding h3.header span {
+ padding:0px 2%;
+}
+
+.nspArt h4.nspHeader {
+ font-size:120%;
+ color:#333;
+ text-decoration:underline;
+}
+
+div#kansen {
+ line-height:140%;
+ color:black;
+}
+div#kansen .kaitei{
+ font-weight:bolder;
+ color:blue;
+ text-align:right;
+}
+
+div#kansen H1 {
+  color: #000099; /* 文字の色 */
+  padding-left: 10px; /* 左の余白 */
+  border-width: 0px 0px 2px 20px; /* 枠の幅 */
+  border-style: solid; /* 枠の種類 */
+  border-color: #9999ff; /* 枠の色 */
+  line-height: 100%; /* 行の高さ */
+  margin: 10px 0px 8px 0px;
+}
+div#kansen H2 {
+  color: #000099; /* 文字の色 */
+  padding-left: 10px; /* 左の余白 */
+  border-width: 0px 0px 2px 15px; /* 枠の幅 */
+  border-style: solid; /* 枠の種類 */
+  border-color: #9999ff; /* 枠の色 */
+  line-height: 100%; /* 行の高さ */
+  margin: 20px 0px 10px 0px;
+}
+div#kansen H3 {
+  color: #000099; /* 文字の色 */
+  padding-left: 10px; /* 左の余白 */
+  border-width: 0px 0px 2px 10px; /* 枠の幅 */
+  border-style: solid; /* 枠の種類 */
+  border-color: #9999ff; /* 枠の色 */
+  line-height: 100%; /* 行の高さ */
+  margin: 20px 0px 10px 0px;
+}
+div#kansen .gakumei{
+ font-style:italic;
+}
+
+
+a.new.link:after{
+#content: url("http://www.nih.go.jp/niid/images/idsc/img/new-red.gif");
+}
+
+/*for ~toha */
+		table.legend {
+			margin-bottom:3px;
+		}
+		table.legend tr th {
+			width:2%;
+			padding:0px;
+			vertical-align:top;
+			padding-left:2em;
+		}
+		table.legend tr td {
+			padding:2px 0px 2px 0px !important;
+			line-height:1em;
+			vertical-align:top;
+		}
+		ol.num1 li {
+			list-style: none;
+			line-height: 1.4;
+		}
+		div#kansen p {
+			text-indent: 1.0em;
+		}
+		div#kansen ol {
+			margin-left:23px;
+		}
+		td.legend {
+			font-size:95%;
+			line-height:90%;
+		}
+		td.legend strong {
+			font-size:100%;
+		}
+		p.legend {
+			text-indent: 0em !important;
+			font-size:95%;
+			line-height:100%;
+			padding-left:5px;
+		}
+		p.legend strong {
+			font-size:100%;
+			padding-left:0px;
+		}
+		ul.legend {
+			line-height:100% !important;
+			list-style-type: none !important;
+			margin:0px;
+			margin-left: 1.0em !important;
+		}
+		ul.legend li {
+			line-height:100% !important;
+			list-style-type: none !important;
+			margin: 3px !important;
+		}
+		
+
+/*for iasr article*/
+
+             div#iasr-article{
+               width:550px;
+               line-height:140%;
+               font-family: 'times new roman';
+               font-size: 10pt;  text-align: -webkit-auto;
+            }
+            div#iasr-article h2{
+               padding: 10px 3px 6px 0px;
+            }
+            div#iasr-article p {
+              #   text-indent: 1.0em;
+            }
+
+
+
+
+#MERS
+		div#epi a {
+			text-decoration: none !important;
+		}
+		div#epi {
+			width:550px;
+                }
+                div#epi * {
+  		        word-break: normal;
+			word-wrap:break-word;
+		}
+		div#epi ul {
+			margin-top:0px !important;
+			margin-left:0px !important;
+			padding-left:0px !important;
+		}
+		div#epi ul li ul {
+			margin-left:2em;
+			padding-left:0px;
+		}
+		div#epi ul li {
+  		        word-break: normal;
+			list-style-type: square;
+			font-size:100%;
+			margin-left:2em;
+		}
+		div#epi ul li ul li {
+			list-style-type: disc;
+			font-size:90% !important;
+		}
+		
+
+
+/* --- 新着情報エリア --- */
+div.update {
+width: 500px; /* 新着情報エリアの幅 */
+font-size: 80%;
+}
+
+/* --- 見出し --- */
+div.update h3 {
+margin: 0 0 5px; /* 見出しのマージン（上、左右、下） */
+font-size: 100%;
+}
+
+/* --- 新着リスト --- */
+div.update dl {
+width: 100%; /* 新着リストの幅 */
+margin: 0;
+border-top: 1px #c0c0c0 dotted; /* 新着リストの上境界線 */
+}
+
+/* --- 日付エリア --- */
+div.update dt {
+width: 6.7em; /* 日付エリアの幅 */
+float: left;
+padding: 7px 0 6px 3px; /* 日付エリアのパディング（上右下左） */
+line-height: 120%;
+}
+
+/* --- 本文エリア --- */
+div.update dd {
+margin: 0;
+padding: 7px 3px 6px 6.6em; /* 本文エリアのパディング（上右下左） */
+border-bottom: 1px #c0c0c0 dotted; /* 本文エリア下境界線 */
+line-height: 120%;
+}
+
+/* --- clearfix --- */
+.clearFix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+.clearFix {
+min-height: 1px;
+}
+
+
+/*--- for IASR --- */
+	#iasr_1, #iasr_2, #iasr_3, #iasr_1 ul, #iasr_2 ul, #iasr_3 ul {
+			margin:0px;
+		}
+		#iasr_1 h1, #iasr_2 h1, #asr_1, #iasr_2, #iasr_3, #iasr_1 ul, #iasr_2 ul, #iasr_3 ul {
+			margin:0px;
+		}
+		#iasr_1 h1, #iasr_2 h1, #iasr_3 h1 {
+			background:url(/niid/images/iasr/iasr_1_h1.jpg) no-repeat;
+			background-repeat : repeat-x;
+			width:230px;
+			height:27px;
+			color:black;
+			font-size: 140%;
+			padding: 5px 0px 8px 5px;
+			margin: 5px 0px 0px 0px;
+			font-wight:normal;
+		}
+		#iasr_2 h1 {
+			background:url(/niid/images/iasr/iasr2bg.jpg) no-repeat;
+			color:black;
+		}
+		#iasr_1 h2, #iasr_2 h2, #iasr_1 h3, #iasr_2 h3 {
+			background:url(/niid/images/iasr/iasr_1_h1.jpg) no-repeat;
+			background-repeat : repeat-x;
+			width:206px;
+			height:25px;
+			color:black;
+			font-size: 120%;
+			padding: 4px 5px 5px 5px;
+			margin: 5px 0px 0px 0px;
+		}
+		#iasr_2 h1 {
+			font-size:120%;
+			padding-top:8px;
+		}
+		#iasr_2 h2 {
+			background: url(/niid/images/iasr/iasr21bg.jpg) no-repeat;
+			color:black;
+		}
+		#iasr_1 h3, #iasr_2 h3 {
+			background:url(/niid/images/iasr/iasr111bg.jpg) no-repeat;
+			width:147px;
+			height:25px;
+			color:black;
+			font-size: 120%;
+			padding: 7px 5px 0px 5px;
+			margin: 5px 0px;
+			font-wight:normal;
+		}
+		#iasr_2 h3 {
+			background: url(/niid/images/iasr/iasr211bg.jpg) no-repeat;
+			margin-left:0px;
+			color:black;
+		}
+		#iasr_3 h1 {
+			background:url(/niid/images/iasr/iasr3bg.jpg) no-repeat;
+			color:black;
+		}
+		#iasr_1 .level2, #iasr_2 .level2, #iasr_3 .level2 {
+			font-size: 120%;
+		}
+		#iasr_1 .level3, #iasr_2 .level3, #iasr_3 .level3 {
+			font-size: 90%;
+			margin-left: 7px;
+		}
+		#iasr_head {
+			width:730px
+		}
+		#iasr_head .left_head {
+			float:left;
+			width:75%
+		}
+		#iasr_head .right_head {
+			float:right;
+			width:20%
+		}
+		.exp1 {
+			font-size: 95%;
+			padding-top:7px;
+		}
+		#exp2 {
+			font-size: 140%;
+			padding-top:6px;
+		}
+		#about-iasr {
+			color: #1e90ff;
+		}
+		#about-iasr strong {
+			font-size: 140%;
+		}
+		#iasr_main {
+			padding: 0px 0px 0px 0px;
+			margin: 0px 0px 0px 0px;
+		}
+		#iasr_1 div.toku a {
+			font-size:120%;
+		}
+		#info span.title {
+			font-size:110%;
+			color: red;
+		}
+		#info {
+			width:700px;
+			line-heght:1em;
+			margin-left:1%;
+			margin-right:1%;
+			padding:2%;
+			background-color:#e6e6fa;
+		}
+
+div.disease dl {
+width: 100%; /* 新着リストの幅 */
+margin: 0;
+#border-top: 1px #c0c0c0 dotted; /* 新着リストの上境界線 */
+}
+
+div.disease dt {
+float: left;
+padding: 7px 0 6px 0px; /* 日付エリアのパディング（上右下左） */
+}
+
+div.disease dd {
+margin: 0;
+padding: 7px 0px 6px 1.2em; /* 本文エリアのパディング（上右下左） */
+  word-break: normal;
+#border-bottom: 1px #c0c0c0 dotted; /* 本文エリア下境界線 */
+}

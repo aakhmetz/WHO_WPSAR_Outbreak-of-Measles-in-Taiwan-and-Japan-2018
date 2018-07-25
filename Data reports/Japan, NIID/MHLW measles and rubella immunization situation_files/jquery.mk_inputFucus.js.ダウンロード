@@ -1,0 +1,80 @@
+;/* $.mk.inputFocus
+****************************************************************************
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	varsion     : 1.0
+	last update : 2010.10.24 - oosugi
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	
+	$('SELECTOR').mk_inputFocus();
+	=========================================================================
+	1）フォーカス時とブラー時にそれぞれclassが付く
+	2）初期表示テキストをフォーカスで削除
+	3）ブラー時に何も入力がされていなければ初期表示テキストを再度表示
+	4）初期表示テキスト以外のものがなにか入っていればclass付与
+	
+	
+	## Config
+	-------------------------------------------------------------------------
+	$('SELECTOR').mk_inputFocus({
+		defaultValue: '',
+		focusClass: 'focus',
+		blurClass: 'blur',
+		inputTrueClass: 'inputTrue'
+	});
+	
+	
+****************************************************************************/
+(function($){
+
+$(function(){
+	$('span.keywords input','#searchArea').mk_inputFocus({
+		defaultValue: '調べたい語句を入力してください'
+	});
+	$('span.keywords input','.searchArea').mk_inputFocus({
+		defaultValue: '調べたい語句を入力してください'
+	});
+});
+
+$.fn.mk_inputFocus = function(config){
+	config = $.extend({
+		defaultValue: '',
+		focusClass: 'focus',
+		blurClass: 'blur',
+		inputTrueClass: 'inputTrue'
+	},config);
+	
+	this.focus(function(){
+		var value = $(this).val();
+		if(value==config.defaultValue){
+			$(this).val('').removeClass(config.inputTrueClass);
+		}else{
+			$(this).addClass(config.inputTrueClass);
+		}
+		$(this).removeClass(config.blurClass).addClass(config.focusClass);
+	});
+	
+	this.blur(function(){
+		var value = $(this).val();
+		if(value==''){
+			$(this).val(config.defaultValue).removeClass(config.inputTrueClass);
+		}else{
+			$(this).addClass(config.inputTrueClass);
+		}
+		$(this).removeClass(config.focusClass).addClass(config.blurClass);
+	});
+	
+	return this.each(function(){
+		var value = $(this).val();
+		if(value!=config.defaultValue){
+			$(this).addClass(config.inputTrueClass);
+		}
+	});
+}
+
+})(jQuery);
+
+

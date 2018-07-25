@@ -1,0 +1,26 @@
+/*!
+ * my.settings.js
+ * サイト用各種設定ファイル
+ */
+
+var MHLWSP = MHLWSP || {}; // Don't modify
+var MHLW = MHLW || MHLWSP || {}; // Don't modify
+
+/**
+ * settings
+ */
+MHLW.settings = {
+	/**
+	 * root
+	 * ルートパスをhttpから指定
+	 * 最後に/は含めない
+	 */
+	root: 'http://www.mhlw.go.jp',
+
+	/**
+	 * modeCookieDays
+	 * PC<=>SP切り替えの有効期間
+	 * 単位:日
+	 */
+	modeCookieDays: 7
+};
